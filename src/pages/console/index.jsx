@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import SplashScreen from "./splashScreen/splashScreen";
 import Console from "./console";
+import { Landing } from "..";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -21,7 +22,7 @@ const App = () => {
     fetchData();
   }, []);
 
-  return <>{loading ? <SplashScreen /> : <Console />}</>;
+  return <>{loading ? <SplashScreen /> : <Landing />}</>;
 };
 
 export default App;
