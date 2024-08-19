@@ -4,7 +4,7 @@ import { GetIconByName } from "../../config/icon";
 
 const index = (props) => {
   const rootClassName = cn(
-    ` w-full group text-[16px] md:text-sm lg:text-15px leading-4 inline-flex items-center cursor-pointer transition ease-in-out duration-300 font-body font-semibold text-center justify-center tracking-[0.2px] rounded placeholder-white focus-visible:outline-none focus:outline-none `,
+    ` w-full group text-[16px] md:text-sm lg:text-15px leading-4 inline-flex items-center cursor-pointer transition ease-in-out duration-300 font-body font-semibold text-center justify-center tracking-[0.2px] rounded-[50px] placeholder-white focus-visible:outline-none focus:outline-none `,
     {
       "h-auto bg-brand-primary-100 text-white tracking-widest px-4 md:px-6 lg:px-8 py-4 md:py-3.5 lg:py-4 hover:text-white hover:bg-brand-primary-100/80 ":
         props.variant === "primary",
@@ -30,6 +30,7 @@ const index = (props) => {
       ref={props.ref}
       className={rootClassName}
       disabled={props.disabled}
+      onClick={props.onClick}
     >
       {!props.loading && (
         <div className={"flex flex-row items-center"}>
