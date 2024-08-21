@@ -98,11 +98,15 @@ import {
 } from "react-icons/fi";
 
 import { HiChartBar } from "react-icons/hi";
+import { FcGoogle } from "react-icons/fc";
+import { IoMailOutline } from "react-icons/io5";
 
 export const GetIconByName = (iconName) => {
   switch (iconName) {
     case "location":
       return <RiMapPinLine />;
+    case "mail":
+      return <IoMailOutline />;
     case "search":
       return <RiSearchLine />;
     case "rightArrow":
@@ -157,14 +161,10 @@ export const GetIconByName = (iconName) => {
       return <FiAlertTriangle />;
     case "calender":
       return <FiCalendar />;
-    case "search":
-      return <FiSearch />;
     case "dots":
       return <FiMoreHorizontal />;
     case "cart":
       return <FiShoppingCart />;
-    case "copy":
-      return <FiCopy />;
     case "printer":
       return <FiPrinter />;
     case "eye":
@@ -265,10 +265,10 @@ export const GetIconByName = (iconName) => {
       return <RiHeartLine />;
     case "heartFill":
       return <RiHeartFill />;
+    case "google":
+      return <FcGoogle />;
     case "cup-fill":
       return <RiCupFill />;
-    case "heart":
-      return <RiUserHeartLine />;
     case "heart-fill":
       return <RiUserHeartFill />;
     case "happy":

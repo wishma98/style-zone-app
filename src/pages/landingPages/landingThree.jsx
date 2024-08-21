@@ -8,7 +8,7 @@ const LandingThree = (props) => {
       <div className="w-full h-auto lg:h-[812px] md:h-dvh max-sm:h-dvh max-md:h-dvh ">
         <img
           className=" w-full h-full object-cover"
-          src={require("../../assets/images/boarding2.png")}
+          src={require("../../assets/images/boarding4.png")}
           alt="landing"
         />
       </div>
