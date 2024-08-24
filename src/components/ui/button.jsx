@@ -8,7 +8,7 @@ const index = (props) => {
     {
       "h-auto bg-brand-primary-100 text-white tracking-widest px-4 md:px-6 lg:px-8 py-4 md:py-3.5 lg:py-4 hover:text-white hover:bg-brand-primary-100/80 ":
         props.variant === "primary",
-      "h-auto bg-white text-grey-100 tracking-widest px-4 md:px-6 lg:px-8 py-4 md:py-3.5 lg:py-4 hover:bg-white/80":
+      "h-auto bg-white text-grey-100 tracking-widest border border-grey-100 px-4 md:px-6 lg:px-8 py-4 md:py-3.5 lg:py-4 hover:bg-grey-100/80 hover:text-white":
         props.variant === "secondary",
       "h-12 md:h-14 bg-white text-brand border border-brand tracking-widest p-[12px] md:px-6 lg:px-6 md:py-3.5 lg:py-4 hover:bg-brand hover:text-white dark:bg-dark-secondary-bg dark:text-white dark:border-border-dark hover:dark:bg-brand/40":
         props.variant === "primary-border",

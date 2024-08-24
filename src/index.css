@@ -41,3 +41,12 @@ code {
 .dot {
   animation: dotFade 2s ease-in-out infinite;
 }
+
+.ant-input {
+  background-color: #f0f3f6;
+}
+.ant-input:hover,
+.ant-input:focus,
+.ant-input:active {
+  background-color: #ffffff;
+}

@@ -5,7 +5,6 @@ import {
   RiArrowDropDownLine,
   RiCheckFill,
   RiDashboardLine,
-  RiEyeOffLine,
   RiFundsBoxLine,
   RiHome5Line,
   RiLock2Line,
@@ -42,7 +41,6 @@ import {
   RiKey2Line,
   RiTimeLine,
   RiCupFill,
-  RiUserHeartLine,
   RiUserHeartFill,
   RiEmotionLine,
   RiEmotionFill,
@@ -63,6 +61,8 @@ import {
   RiMoonLine,
   RiSunFoggyLine,
   RiSunLine,
+  RiEyeFill,
+  RiEyeOffFill,
 } from "react-icons/ri";
 
 import {
@@ -75,9 +75,7 @@ import {
   FiChevronLeft,
   FiChevronRight,
   FiChevronUp,
-  FiCopy,
   FiEdit2,
-  FiEye,
   FiGrid,
   FiLock,
   FiMinus,
@@ -85,7 +83,6 @@ import {
   FiPlus,
   FiPrinter,
   FiRotateCcw,
-  FiSearch,
   FiSettings,
   FiShoppingCart,
   FiSmile,
@@ -100,6 +97,8 @@ import {
 import { HiChartBar } from "react-icons/hi";
 import { FcGoogle } from "react-icons/fc";
 import { IoMailOutline } from "react-icons/io5";
+import { MdLockOutline } from "react-icons/md";
+import { TiUser } from "react-icons/ti";
 
 export const GetIconByName = (iconName) => {
   switch (iconName) {
@@ -113,6 +112,8 @@ export const GetIconByName = (iconName) => {
       return <RiArrowRightLine />;
     case "leftArrow":
       return <RiArrowLeftLine />;
+    case "lock":
+      return <MdLockOutline />;
     case "sales":
       return <RiShoppingBasketLine />;
     case "purchasing":
@@ -145,8 +146,6 @@ export const GetIconByName = (iconName) => {
       return <FiChevronDown />;
     case "chevron-up":
       return <FiChevronUp />;
-    case "lock":
-      return <FiLock />;
     case "cloud-up":
       return <FiUploadCloud />;
     case "alertCircle":
@@ -168,7 +167,7 @@ export const GetIconByName = (iconName) => {
     case "printer":
       return <FiPrinter />;
     case "eye":
-      return <FiEye />;
+      return <RiEyeFill />;
     case "pencil":
       return <FiEdit2 />;
     case "rotate":
@@ -190,7 +189,7 @@ export const GetIconByName = (iconName) => {
     case "paintbrush":
       return <RiPaintBrushLine />;
     case "eyeOff":
-      return <RiEyeOffLine />;
+      return <RiEyeOffFill />;
     case "logout":
       return <RiLock2Line />;
     case "profile":
@@ -236,9 +235,7 @@ export const GetIconByName = (iconName) => {
     case "function":
       return <RiFunctionLine />;
     case "user":
-      return <RiUserFill />;
-    case "mail":
-      return <RiMailSendLine />;
+      return <TiUser />;
     case "facebook":
       return <RiFacebookCircleLine />;
     case "whatsapp":
