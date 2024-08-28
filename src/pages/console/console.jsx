@@ -10,7 +10,11 @@ import { withRouter } from "react-router-dom";
 
 const Index = () => {
   return (
-    <div className={"bg-white h-full flex flex-col py-11 px-4 justify-between"}>
+    <div
+      className={
+        "bg-white h-full flex flex-col py-11 px-4 justify-between container"
+      }
+    >
       <div className="flex flex-row justify-between items-center">
         <FormHeader
           title={"The style Zone  "}
@@ -31,35 +35,35 @@ const Index = () => {
       <div className="sm:hidden md:hidden lg:block max-md:hidden max-lg:block mt-4">
         <div className=" flex flex-row flex-wrap gap-4 justify-between">
           <MenuComponent
-            iconName={require("../../assets/images/Haircut.svg").default}
+            iconName={require("../../assets/images/Haircut.png")}
             menuName="Haircut"
           />
           <MenuComponent
-            iconName={require("../../assets/images/Nails.svg").default}
+            iconName={require("../../assets/images/Nails.png")}
             menuName="Nails"
           />
           <MenuComponent
-            iconName={require("../../assets/images/Facial.svg").default}
+            iconName={require("../../assets/images/Facial.png")}
             menuName="Facial"
           />
           <MenuComponent
-            iconName={require("../../assets/images/Coloring.svg").default}
+            iconName={require("../../assets/images/Coloring.png")}
             menuName="Coloring"
           />
           <MenuComponent
-            iconName={require("../../assets/images/Spa.svg").default}
+            iconName={require("../../assets/images/Spa.png")}
             menuName="Spa"
           />
           <MenuComponent
-            iconName={require("../../assets/images/Waxing.svg").default}
+            iconName={require("../../assets/images/Waxing.png")}
             menuName="Waxing"
           />
           <MenuComponent
-            iconName={require("../../assets/images/Makeup.svg").default}
+            iconName={require("../../assets/images/Makeup.png")}
             menuName="Makeup"
           />
           <MenuComponent
-            iconName={require("../../assets/images/Message.svg").default}
+            iconName={require("../../assets/images/Message.png")}
             menuName="Message"
           />
         </div>
@@ -67,37 +71,37 @@ const Index = () => {
       <div className="sm:block md:block lg:hidden max-md:block max-lg:hidden mt-4">
         <div className="flex flex-row flex-wrap gap-4 justify-between">
           <MenuComponent
-            iconName={require("../../assets/images/Haircut.svg").default}
+            iconName={require("../../assets/images/Haircut.png")}
             menuName="Haircut"
           />
           <MenuComponent
-            iconName={require("../../assets/images/Nails.svg").default}
+            iconName={require("../../assets/images/Nails.png")}
             menuName="Nails"
           />
           <MenuComponent
-            iconName={require("../../assets/images/Facial.svg").default}
+            iconName={require("../../assets/images/Facial.png")}
             menuName="Facial"
           />
           <MenuComponent
-            iconName={require("../../assets/images/Coloring.svg").default}
+            iconName={require("../../assets/images/Coloring.png")}
             menuName="Coloring"
           />
         </div>
         <div className="flex flex-row flex-wrap gap-4 justify-between mt-4">
           <MenuComponent
-            iconName={require("../../assets/images/Spa.svg").default}
+            iconName={require("../../assets/images/Spa.png")}
             menuName="Spa"
           />
           <MenuComponent
-            iconName={require("../../assets/images/Waxing.svg").default}
+            iconName={require("../../assets/images/Waxing.png")}
             menuName="Waxing"
           />
           <MenuComponent
-            iconName={require("../../assets/images/Makeup.svg").default}
+            iconName={require("../../assets/images/Makeup.png")}
             menuName="Makeup"
           />
           <MenuComponent
-            iconName={require("../../assets/images/Message.svg").default}
+            iconName={require("../../assets/images/Message.png")}
             menuName="Message"
           />
         </div>
