@@ -7,8 +7,8 @@ const ActiveCard = (props) => {
       <img src={props.imgUrl} alt="active-image" srcset="" />
 
       <div
-        className="absolute ml-[73%] z-50 mt-3 w-10 h-10 flex items-center justify-center text-[32px] bg-brand-accent-light text-brand-accent rounded-full
-      hover:bg-opacity-70 focus:bg-opacity-85"
+        className="absolute ml-[73%] z-40 mt-3 w-10 h-10 cursor-pointer flex items-center justify-center text-[32px] bg-brand-accent-light text-brand-accent rounded-full
+      hover:bg-opacity-90 focus:bg-opacity-95"
       >
         {GetIconByName("heart")}
       </div>

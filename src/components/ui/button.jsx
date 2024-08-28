@@ -10,8 +10,8 @@ const index = (props) => {
         props.variant === "primary",
       "h-auto bg-white text-grey-100 tracking-widest border border-grey-100 px-4 md:px-6 lg:px-8 py-4 md:py-3.5 lg:py-4 hover:bg-grey-100/80 hover:text-white":
         props.variant === "secondary",
-      "h-12 md:h-14 bg-white text-brand border border-brand tracking-widest p-[12px] md:px-6 lg:px-6 md:py-3.5 lg:py-4 hover:bg-brand hover:text-white dark:bg-dark-secondary-bg dark:text-white dark:border-border-dark hover:dark:bg-brand/40":
-        props.variant === "primary-border",
+      "h-auto bg-brand-accent text-white tracking-widest px-4 md:px-6 lg:px-8 py-4 md:py-3.5 lg:py-4 hover:text-white hover:bg-brand-accent/70":
+        props.variant === "btn-brown",
       "h-12 md:h-14 bg-brand-light text-brand-dark border border-border-four tracking-widest px-5 md:px-6 lg:px-8 py-4 md:py-3.5 lg:py-4":
         props.variant === "border",
       "px-3 py-3 bg-grey-100 text-white rounded-full font-manrope hover:bg-opacity-70 focus:bg-opacity-85":

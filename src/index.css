@@ -50,3 +50,9 @@ code {
 .ant-input:active {
   background-color: #ffffff;
 }
+.ant-rate {
+  font-size: 14px;
+}
+.ant-rate-star {
+  color: #a68877 !important;
+}
