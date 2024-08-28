@@ -1,8 +1,5 @@
-// SplashScreen.js
 import React, { useState } from "react";
-import { Button, Input } from "../../components";
-// import { Input, Tooltip } from "antd";
-import { GetIconByName } from "../../config/icon";
+import { Button, FormHeader, Input } from "../../components";
 
 const SignIn = (props) => {
   const [email, setEmail] = useState("");
@@ -10,14 +7,11 @@ const SignIn = (props) => {
   return (
     <div className={"bg-white h-full flex flex-col py-11 px-4 justify-between"}>
       <div>
-        <div className="flex flex-col items-start">
-          <div className="font-manrope font-bold text-grey-100 text-24px">
-            Welcome back,
-          </div>
-          <div className="font-nunito font-normal text-grey-80 text-14px">
-            Glad to meet you again!, please login to use the app.
-          </div>
-        </div>
+        <FormHeader
+          title={"Welcome back,"}
+          subTitle={"Glad to meet you again!, please login to use the app."}
+        />
+
         <div className="mt-[118px]">
           <Input
             placeholder={"Email"}

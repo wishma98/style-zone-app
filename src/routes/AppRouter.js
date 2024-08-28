@@ -6,6 +6,7 @@ import PublicRoute from "./PublicRoute";
 import {
   Console,
   ForgetPassword,
+  Landing,
   ResetPassword,
   SignIn,
   SignUp,
@@ -15,6 +16,7 @@ const Index = (props) => (
   <>
     <Switch>
       <PublicRoute component={Console} path="/" exact />
+      <PublicRoute component={Landing} path="/landing" exact />
       <PublicRoute component={SignIn} path="/sign-in" exact />
       <PublicRoute component={SignUp} path="/sign-up" exact />
       <PublicRoute component={ForgetPassword} path="/forget-password" exact />

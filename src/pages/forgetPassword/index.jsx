@@ -1,22 +1,17 @@
-// SplashScreen.js
 import React, { useState } from "react";
-import { Button, Input } from "../../components";
-// import { Input, Tooltip } from "antd";
-import { GetIconByName } from "../../config/icon";
+import { Button, FormHeader, Input } from "../../components";
 
 const SignIn = (props) => {
   const [email, setEmail] = useState("");
   return (
     <div className={"bg-white h-full flex flex-col py-11 px-4 justify-between"}>
       <div>
-        <div className="flex flex-col items-start">
-          <div className="font-manrope font-bold text-grey-100 text-24px">
-            Forgot password,
-          </div>
-          <div className="font-nunito font-normal text-grey-80 text-14px">
-            Please type your email below and we will give you a OTP code
-          </div>
-        </div>
+        <FormHeader
+          title={"Forgot password,"}
+          subTitle={
+            "Please type your email below and we will give you a OTP code"
+          }
+        />
         <div className="mt-[118px]">
           <Input
             placeholder={"Email address"}

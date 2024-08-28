@@ -14,8 +14,8 @@ const index = (props) => {
         props.variant === "primary-border",
       "h-12 md:h-14 bg-brand-light text-brand-dark border border-border-four tracking-widest px-5 md:px-6 lg:px-8 py-4 md:py-3.5 lg:py-4":
         props.variant === "border",
-      "h-11 md:h-[50px] bg-brand text-brand-light font-manrope px-5 lg:px-6 py-4 md:py-3.5 lg:py-4 hover:text-white hover:bg-opacity-90 focus:bg-opacity-70":
-        props.variant === "formButton",
+      "px-3 py-3 bg-grey-100 text-white rounded-full font-manrope hover:bg-opacity-70 focus:bg-opacity-85":
+        props.variant === "iconButton",
       "bg-brand h-auto text-font-white rounded-sm border-[1px] border-solid border-brand hover:bg-indigo-800/90":
         props.variant === "secondary-fill",
       "cursor-not-allowed hover:cursor-not-allowed bg-opacity-50 hover:bg-opacity-50":

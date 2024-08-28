@@ -22,7 +22,7 @@ const App = () => {
     fetchData();
   }, []);
 
-  return <>{loading ? <SplashScreen /> : <Landing />}</>;
+  return <>{loading ? <SplashScreen /> : <Console />}</>;
 };
 
 export default App;

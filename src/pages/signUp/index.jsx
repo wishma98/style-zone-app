@@ -1,8 +1,5 @@
-// SplashScreen.js
 import React, { useState } from "react";
-import { Button, Input, MobileNoInput } from "../../components";
-// import { Input, Tooltip } from "antd";
-import { GetIconByName } from "../../config/icon";
+import { Button, FormHeader, Input, MobileNoInput } from "../../components";
 
 const SignIn = (props) => {
   const [name, setName] = useState("");
@@ -13,14 +10,12 @@ const SignIn = (props) => {
   return (
     <div className={"bg-white h-full flex flex-col py-11 px-4 justify-between"}>
       <div>
-        <div className="flex flex-col items-start">
-          <div className="font-manrope font-bold text-grey-100 text-24px">
-            Create an account,
-          </div>
-          <div className="font-nunito font-normal text-grey-80 text-14px">
-            Please type full information bellow and we can create your account
-          </div>
-        </div>
+        <FormHeader
+          title={"Create an account,"}
+          subTitle={
+            "Please type full information bellow and we can create your account"
+          }
+        />
         <div className="mt-[38px]">
           <Input
             placeholder={"Name"}
@@ -53,10 +48,10 @@ const SignIn = (props) => {
             className={"relative mt-4"}
             required={true}
             type="text"
-            value={email}
+            value={mobileNo}
             optionValue={option}
             onChange={(e) => {
-              setEmail(e.target.value);
+              setMobileNo(e.target.value);
             }}
             onChangeOption={(e) => {
               setOption(e);
