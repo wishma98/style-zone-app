@@ -5,6 +5,7 @@ import SignUp from "./signUp";
 import ForgetPassword from "./forgetPassword";
 import ResetPassword from "./resetPassword";
 import Dashboard from "./dashboard";
+import Services from "./services";
 
 export {
   Console,
@@ -14,4 +15,5 @@ export {
   ForgetPassword,
   ResetPassword,
   Dashboard,
+  Services,
 };

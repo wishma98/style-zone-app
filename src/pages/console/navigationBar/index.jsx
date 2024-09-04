@@ -7,6 +7,7 @@ import {
   FaUserCircle,
 } from "react-icons/fa";
 import NavigationComponent from "./navigationComponent";
+import { withRouter } from "react-router-dom/cjs/react-router-dom";
 
 const NavigationBar = (props) => {
   const [menuName, setMenuName] = useState("home");
@@ -14,16 +15,18 @@ const NavigationBar = (props) => {
     <div className="w-full flex space-x-10 justify-around bg-white p-4 border-b">
       <NavigationComponent
         iconName={<FaHome />}
-        isActive={menuName === "home"}
+        isActive={props.location.pathname === "/"}
         onClick={() => {
           setMenuName("home");
+          props.history.push("/");
         }}
       />
       <NavigationComponent
         iconName={<FaInfoCircle />}
-        isActive={menuName === "info"}
+        isActive={props.location.pathname === "/services"}
         onClick={() => {
-          setMenuName("info");
+          setMenuName("service");
+          props.history.push("/services");
         }}
       />
       <NavigationComponent
@@ -52,4 +55,4 @@ const NavigationBar = (props) => {
   );
 };
 
-export default NavigationBar;
+export default withRouter(NavigationBar);

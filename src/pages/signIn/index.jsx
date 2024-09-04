@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button, FormHeader, Input } from "../../components";
+import { withRouter } from "react-router-dom/cjs/react-router-dom";
 
 const SignIn = (props) => {
   const [email, setEmail] = useState("");
@@ -41,7 +42,10 @@ const SignIn = (props) => {
             }}
           />
         </div>
-        <div className="text-grey-100 cursor-pointer text-12px font-normal font-nunito float-end mt-4">
+        <div
+          className="text-grey-100 cursor-pointer text-12px font-normal font-nunito float-end mt-4"
+          onClick={() => props.history.push("/forget-password")}
+        >
           Forget password?
         </div>
       </div>
@@ -59,7 +63,10 @@ const SignIn = (props) => {
         </div>
         <div className="font-nunito font-normal text-14px mt-8 text-grey-100 text-wrap text-center">
           Don’t have an account?
-          <span className="font-manrope font-semibold text-14px pl-1 text-grey-100 text-center hover:underline cursor-pointer">
+          <span
+            className="font-manrope font-semibold text-14px pl-1 text-grey-100 text-center hover:underline cursor-pointer"
+            onClick={() => props.history.push("/sign-up")}
+          >
             Join Now
           </span>
         </div>
@@ -68,4 +75,4 @@ const SignIn = (props) => {
   );
 };
 
-export default SignIn;
+export default withRouter(SignIn);

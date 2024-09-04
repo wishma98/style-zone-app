@@ -96,7 +96,11 @@ import {
 
 import { HiChartBar } from "react-icons/hi";
 import { FcGoogle } from "react-icons/fc";
-import { IoMailOutline } from "react-icons/io5";
+import {
+  IoChevronBackOutline,
+  IoChevronForwardOutline,
+  IoMailOutline,
+} from "react-icons/io5";
 import { MdLockOutline } from "react-icons/md";
 import { TiUser } from "react-icons/ti";
 
@@ -109,9 +113,9 @@ export const GetIconByName = (iconName) => {
     case "search":
       return <RiSearchLine />;
     case "rightArrow":
-      return <RiArrowRightLine />;
+      return <IoChevronForwardOutline />;
     case "leftArrow":
-      return <RiArrowLeftLine />;
+      return <IoChevronBackOutline />;
     case "lock":
       return <MdLockOutline />;
     case "sales":

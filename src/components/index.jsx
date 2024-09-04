@@ -5,6 +5,7 @@ import FormHeader from "./formHeaderComponent";
 import MenuComponent from "./menuComponent";
 import ActiveCard from "./cards/activeCard";
 import ReviewCard from "./cards/reviewCard";
+import PageNavigation from "./pageNavigation";
 
 export {
   Button,
@@ -14,4 +15,5 @@ export {
   MenuComponent,
   ActiveCard,
   ReviewCard,
+  PageNavigation,
 };

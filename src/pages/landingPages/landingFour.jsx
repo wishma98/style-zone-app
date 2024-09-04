@@ -34,7 +34,10 @@ const LandingFour = (props) => {
         </div>
         <div className="font-nunito font-normal text-14px mt-8 text-white text-wrap text-center">
           Already have an account?
-          <span className="font-manrope font-semibold text-14px pl-1 text-brand-secondary-100 text-center hover:underline cursor-pointer">
+          <span
+            className="font-manrope font-semibold text-14px pl-1 text-brand-secondary-100 text-center hover:underline cursor-pointer"
+            onClick={() => props.history.push("/sign-in")}
+          >
             Sign In
           </span>
         </div>

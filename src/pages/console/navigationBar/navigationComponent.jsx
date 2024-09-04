@@ -11,7 +11,7 @@ const NavigationComponent = (props) => {
           {props.iconName}
         </div>
         {props.isActive && (
-          <span className="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 text-xs text-black">
+          <span className="absolute bottom-[-20px] left-1/2 transform -translate-x-1/2 text-2xl text-black">
             •
           </span>
         )}
