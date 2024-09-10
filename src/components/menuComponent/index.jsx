@@ -2,9 +2,13 @@ import React from "react";
 
 const Index = (props) => {
   return (
-    <div className="flex flex-col items-center">
+    <div
+      className={`flex flex-col items-center ${
+        props.isActive ? "opacity-80" : ""
+      }`}
+    >
       <div
-        className="w-16 h-16 px-[14px] py-3 rounded-full text-brand-secondary bg-brand-primary-light cursor-pointer hover:bg-opacity-90"
+        className="w-16 h-16 flex px-[14px] py-3 rounded-full text-brand-secondary bg-brand-primary-light cursor-pointer hover:bg-opacity-90 "
         onClick={props.onClick}
       >
         <img

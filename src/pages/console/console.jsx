@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { withRouter } from "react-router-dom";
 import NavigationBar from "./navigationBar";
-import { Dashboard, Services } from "..";
+import { Booking, Dashboard, Services } from "..";
 import Scrollbars from "react-custom-scrollbars-2";
 
 const Index = (props) => {
@@ -49,6 +49,7 @@ const Index = (props) => {
       >
         {props.location.pathname === "/" && <Dashboard />}
         {props.location.pathname === "/services" && <Services />}
+        {props.location.pathname === "/booking" && <Booking />}
       </Scrollbars>
       <footer className="w-full fixed bottom-0 z-50">
         <NavigationBar />

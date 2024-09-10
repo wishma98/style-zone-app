@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import {
-  ActiveCard,
   Button,
   FormHeader,
+  Input,
+  ItemCard,
   MenuComponent,
-  ReviewCard,
+  PageNavigation,
+  RecentCard,
 } from "../../components";
 import { GetIconByName } from "../../config/icon";
+import { withRouter } from "react-router-dom/cjs/react-router-dom";
 
 const Index = (props) => {
+  const [searchItem, setSearchItem] = useState("");
   const [menuItems, setMenuItems] = useState({
     haircut: {
       key: "haircut",
@@ -111,6 +115,38 @@ const Index = (props) => {
       isActive: false,
     },
   });
+  const [itemsList, setItemsList] = useState([
+    {
+      imgUrl: require("../../assets/images/cardImage.png"),
+      title: "Woman Blunt Cut",
+      price: "$50",
+      createdAt: "2024-08-10T13:13:36.818+00:00",
+      description:
+        "Layered hair is a hairstyle that gives the illusion of Layered hair is a hairstyle that gives the illusion of",
+      tagName: "50%",
+      isActive: false,
+    },
+    {
+      imgUrl: require("../../assets/images/cardImage.png"),
+      title: "Woman Blunt Cut",
+      price: "$50",
+      createdAt: "2024-08-10T13:13:36.818+00:00",
+      description:
+        "Layered hair is a hairstyle that gives the illusion of Layered hair is a hairstyle that gives the illusion of",
+      tagName: "",
+      isActive: false,
+    },
+    {
+      imgUrl: require("../../assets/images/cardImage.png"),
+      title: "Woman Blunt Cut",
+      price: "$50",
+      createdAt: "2024-08-10T13:13:36.818+00:00",
+      description:
+        "Layered hair is a hairstyle that gives the illusion of Layered hair is a hairstyle that gives the illusion of",
+      tagName: "50%",
+      isActive: false,
+    },
+  ]);
 
   const onClickMenus = async (selected_key, type) => {
     const updateMenuList =
@@ -137,6 +173,7 @@ const Index = (props) => {
   const updatedList = { ...menuItems };
   const updatedListTop = { ...mobileMenuItemsTop };
   const updatedListBottom = { ...mobileMenuItemsBottom };
+  const updatedItemsList = { ...itemsList };
 
   const renderMenus = () => {
     let content = [];
@@ -183,21 +220,83 @@ const Index = (props) => {
     return content;
   };
 
+  const renderItemsList = () => {
+    let content = [];
+    for (let idx in itemsList) {
+      content.push(
+        <ItemCard
+          imgUrl={updatedItemsList[idx].imgUrl}
+          title={updatedItemsList[idx].title}
+          price={updatedItemsList[idx].price}
+          createdAt={updatedItemsList[idx].createdAt}
+          description={
+            updatedItemsList[idx].description.substring(0, 70).trimEnd() + "..."
+          }
+          tagName={updatedItemsList[idx].tagName}
+          isActive={updatedItemsList[idx].isActive}
+          onClick={() => {
+            updatedItemsList[idx].isActive = !updatedItemsList[idx].isActive;
+            setItemsList(updatedItemsList);
+          }}
+        />
+      );
+    }
+    return content;
+  };
+
   return (
     <div className=" relative h-auto mb-8 py-11 px-4">
       <header className={props.className}>
-        <div className="flex flex-row justify-between items-center">
-          <FormHeader
-            title={"The style Zone  "}
-            subTitle={"Find the service you want, and treat yourself"}
-          />
-          <div className="flex">
-            <Button size="md" variant={"iconButton"}>
-              {GetIconByName("search")}
-            </Button>
+        <PageNavigation
+          title={"Services"}
+          onClick={() => {
+            props.history.push("/");
+          }}
+        />
+      </header>
+      <div className="flex flex-row justify-between items-center mt-4">
+        <FormHeader
+          title={"Hello, Delreen"}
+          subTitle={"Find the service you want, and treat yourself"}
+        />
+        <div className="flex">
+          <Button size="md" variant={"iconButton"}>
+            {GetIconByName("search")}
+          </Button>
+        </div>
+      </div>
+      {/* search bar */}
+      <div className="mt-7">
+        <Input
+          placeholder={"Search service.."}
+          className={"relative"}
+          required={true}
+          type="text"
+          phoneNo={false}
+          leftIcon={"search"}
+          variant="normal"
+          value={searchItem}
+          onChange={(e) => {
+            setSearchItem(e.target.value);
+          }}
+        />
+      </div>
+      {/* recent */}
+      <section>
+        <div className="flex flex-row justify-between items-center mt-4 mb-5">
+          <div className="text-grey-80 text-16px font-nunito font-normal">
+            Recents
+          </div>
+          <div className="text-brand text-16px font-manrope font-semibold cursor-pointer hover:underline">
+            Clear all
           </div>
         </div>
-      </header>
+        <div className="flex flex-col">
+          <RecentCard itemName={"Hair service"} />
+          <RecentCard itemName={"Nail"} />
+          <RecentCard itemName={"Wax"} />
+        </div>
+      </section>
       {/* menus */}
       <section>
         <div className="flex flex-row justify-between items-center mt-5">
@@ -224,69 +323,12 @@ const Index = (props) => {
       </section>
       {/* active cards */}
       <section>
-        <div className="flex flex-row justify-between items-center mt-5">
-          <div className="text-brand text-16px font-manrope font-bold">
-            The Style Zone Advice Hub
-          </div>
-          <div className="text-brand text-16px font-manrope font-semibold cursor-pointer hover:underline">
-            Watch all
-          </div>
-        </div>
         <div className="flex flex-row flex-wrap justify-between mt-4 gap-4">
-          <ActiveCard
-            imgUrl={require("../../assets/images/cardImage.png")}
-            title={"Steps of the hair removal"}
-            subTitle={"There are  12 steps"}
-          />
-          <ActiveCard
-            imgUrl={require("../../assets/images/cardImage.png")}
-            title={"Steps of the hair removal"}
-            subTitle={"There are  12 steps"}
-          />
+          {renderItemsList()}
         </div>
       </section>
-      {/* reviews */}
-      <section>
-        <div className="flex flex-row justify-between items-center mt-5">
-          <div className="text-brand text-16px font-manrope font-bold">
-            What do you want to do?
-          </div>
-          <div className="text-brand text-16px font-manrope font-semibold cursor-pointer hover:underline">
-            View all
-          </div>
-        </div>
-        <div className="flex flex-col justify-between mt-2 gap-3">
-          <ReviewCard
-            name={"Jennie Whang"}
-            createdAt={"2024-08-25T18:20:17.875+00:00"}
-            rate={4.5}
-            comment={
-              "The place was clean, great service, stall are friendly. I will certainly recommend to my friends and visit again! ;)"
-            }
-          />
-          <ReviewCard
-            name={"Natalia"}
-            createdAt={"2024-08-01T18:20:17.875+00:00"}
-            rate={4.5}
-            comment={
-              "Very nice service from the specialist. I always going here for my treatment."
-            }
-          />
-          <ReviewCard
-            name={"Julia Martha"}
-            createdAt={"2024-07-01T18:20:17.875+00:00"}
-            rate={4}
-            comment={"This is my favorite place to treat my hair :)"}
-          />
-        </div>
-      </section>
-      <div className="my-0 mx-auto lg:w-3/4 sm:w-full md:w-3/4 mt-14">
-        <Button size="lg" variant={"btn-brown"}>
-          {"Book Now"}
-        </Button>
-      </div>
     </div>
   );
 };
 
-export default Index;
+export default withRouter(Index);

@@ -44,7 +44,9 @@ const SignIn = (props) => {
       </div>
       <div>
         <div className="w-full mt-44 bottom-0 lg:bottom-0 flex flex-col gap-3">
-          <Button variant={"primary"}>Confirm New Password</Button>
+          <Button size="lg" variant={"primary"}>
+            Confirm New Password
+          </Button>
         </div>
       </div>
     </div>

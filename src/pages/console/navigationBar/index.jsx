@@ -31,9 +31,10 @@ const NavigationBar = (props) => {
       />
       <NavigationComponent
         iconName={<FaCalendarAlt />}
-        isActive={menuName === "schedule"}
+        isActive={props.location.pathname === "/booking"}
         onClick={() => {
           setMenuName("schedule");
+          props.history.push("/booking");
         }}
       />
       <NavigationComponent

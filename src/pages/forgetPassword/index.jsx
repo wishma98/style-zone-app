@@ -33,7 +33,9 @@ const SignIn = (props) => {
       </div>
       <div>
         <div className="w-full mt-44 bottom-0 lg:bottom-0 flex flex-col gap-3">
-          <Button variant={"primary"}>Send Code</Button>
+          <Button size="lg" variant={"primary"}>
+            Send Code
+          </Button>
         </div>
         <div className="font-nunito font-normal text-14px mt-8 text-grey-100 text-wrap text-center">
           Don’t have an account?

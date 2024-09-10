@@ -97,6 +97,9 @@ module.exports = {
       animation: {
         reversPing: "reversPing 2s cubic-bezier(0, 0, 0.2, 1) infinite",
       },
+      boxShadow: {
+        custom: "0px 4px 8px 0px #CDCDCD40",
+      },
       keyframes: {
         reversPing: {
           "100%": { transform: "scale(2)", opacity: "0" },

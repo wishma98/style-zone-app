@@ -6,6 +6,10 @@ import MenuComponent from "./menuComponent";
 import ActiveCard from "./cards/activeCard";
 import ReviewCard from "./cards/reviewCard";
 import PageNavigation from "./pageNavigation";
+import TagComponent from "./tagComponent";
+import ItemCard from "./cards/itemCard";
+import RecentCard from "./cards/recentCard";
+import TabComponent from "./tabComponent";
 
 export {
   Button,
@@ -16,4 +20,8 @@ export {
   ActiveCard,
   ReviewCard,
   PageNavigation,
+  TagComponent,
+  ItemCard,
+  RecentCard,
+  TabComponent,
 };

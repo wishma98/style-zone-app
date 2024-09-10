@@ -1,7 +1,6 @@
 import {
   RiMapPinLine,
   RiSearchLine,
-  RiArrowRightLine,
   RiArrowDropDownLine,
   RiCheckFill,
   RiDashboardLine,
@@ -27,8 +26,6 @@ import {
   RiFileList3Line,
   RiGlobalLine,
   RiFunctionLine,
-  RiUserFill,
-  RiMailSendLine,
   RiWhatsappLine,
   RiFacebookCircleLine,
   RiInstagramLine,
@@ -46,7 +43,6 @@ import {
   RiEmotionFill,
   RiEmotionUnhappyLine,
   RiEmotionUnhappyFill,
-  RiArrowLeftLine,
   RiHeartFill,
   RiHeartLine,
   RiStarFill,
@@ -77,7 +73,6 @@ import {
   FiChevronUp,
   FiEdit2,
   FiGrid,
-  FiLock,
   FiMinus,
   FiMoreHorizontal,
   FiPlus,
@@ -86,7 +81,6 @@ import {
   FiSettings,
   FiShoppingCart,
   FiSmile,
-  FiTag,
   FiTrash2,
   FiTrendingUp,
   FiUploadCloud,
@@ -96,6 +90,7 @@ import {
 
 import { HiChartBar } from "react-icons/hi";
 import { FcGoogle } from "react-icons/fc";
+import { FaTag } from "react-icons/fa";
 import {
   IoChevronBackOutline,
   IoChevronForwardOutline,
@@ -133,7 +128,7 @@ export const GetIconByName = (iconName) => {
     case "home":
       return <RiHome5Line />;
     case "tag":
-      return <FiTag />;
+      return <FaTag />;
     case "trend-up":
       return <FiTrendingUp />;
     case "birthday":

@@ -6,6 +6,7 @@ import ForgetPassword from "./forgetPassword";
 import ResetPassword from "./resetPassword";
 import Dashboard from "./dashboard";
 import Services from "./services";
+import Booking from "./booking";
 
 export {
   Console,
@@ -16,4 +17,5 @@ export {
   ResetPassword,
   Dashboard,
   Services,
+  Booking,
 };

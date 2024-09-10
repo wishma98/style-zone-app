@@ -32,7 +32,7 @@ const LandingThree = (props) => {
           />
         </div>
         <div className="w-full mt-20 bottom-[10%] lg:bottom-0">
-          <Button variant={"primary"} onClick={props.onClick}>
+          <Button size="lg" variant={"primary"} onClick={props.onClick}>
             Get Started
           </Button>
         </div>

@@ -51,13 +51,15 @@ const SignIn = (props) => {
       </div>
       <div>
         <div className="w-full mt-44 bottom-0 lg:bottom-0 flex flex-col gap-3">
-          <Button variant={"primary"}>Sign In</Button>
+          <Button size="lg" variant={"primary"}>
+            Sign In
+          </Button>
           <div className="flex items-center justify-center my-4">
             <div className="border-t border-grey-40 flex-grow"></div>
             <span className="mx-2 text-gray-500">or</span>
             <div className="border-t border-grey-40 flex-grow"></div>
           </div>
-          <Button variant={"secondary"} iconNameLeft={"google"}>
+          <Button size="lg" variant={"secondary"} iconNameLeft={"google"}>
             Join with Google
           </Button>
         </div>

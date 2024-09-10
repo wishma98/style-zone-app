@@ -31,7 +31,7 @@ const LandingOne = (props) => {
           <div className={`h-2 w-2 bg-white rounded-full dot`} />
         </div>
         <div className="w-full mt-20 bottom-[10%] lg:bottom-0">
-          <Button variant={"primary"} onClick={props.onClick}>
+          <Button size="lg" variant={"primary"} onClick={props.onClick}>
             Next
           </Button>
         </div>

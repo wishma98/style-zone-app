@@ -56,3 +56,46 @@ code {
 .ant-rate-star {
   color: #a68877 !important;
 }
+
+.ant-tabs {
+  width: 100%;
+  z-index: 50;
+}
+.ant-tabs-nav {
+  border: none;
+  margin: 0;
+  background-color: white;
+  border: none;
+}
+.ant-tabs-top > .ant-tabs-nav:before {
+  border: none;
+}
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  font-size: 12px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  color: #111111;
+}
+.ant-tabs-tab {
+  padding: 12px 24px 12px 24px;
+  font-size: 12px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  color: #111111;
+}
+.ant-tabs-tab:hover {
+  color: #1a1919;
+}
+.ant-tabs-tab-btn {
+  font-size: 12px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  color: #111111;
+}
+.ant-tabs-tab-btn:hover {
+  color: #1a1919;
+}
+.ant-tabs-ink-bar {
+  border-radius: 5px;
+  background: #adb3bc;
+}
