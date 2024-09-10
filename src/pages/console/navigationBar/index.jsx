@@ -39,10 +39,11 @@ const NavigationBar = (props) => {
       />
       <NavigationComponent
         iconName={<FaEnvelope />}
-        isActive={menuName === "notification"}
+        isActive={props.location.pathname === "notifications"}
         activeNotification={true}
         onClick={() => {
           setMenuName("notification");
+          props.history.push("/notifications");
         }}
       />
       <NavigationComponent

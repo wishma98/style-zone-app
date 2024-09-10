@@ -69,6 +69,8 @@ module.exports = {
         full: "9999px",
         large: "12px",
         drop: "0 0 10px 10px",
+        sender: "15px 0px 15px 15px",
+        receiver: "0px 15px 15px 15px",
       },
       borderWidth: {
         DEFAULT: "1px",
@@ -96,11 +98,16 @@ module.exports = {
       },
       animation: {
         reversPing: "reversPing 2s cubic-bezier(0, 0, 0.2, 1) infinite",
+        "typing-dot": "typing 1s infinite ease-in-out",
       },
       boxShadow: {
         custom: "0px 4px 8px 0px #CDCDCD40",
       },
       keyframes: {
+        typing: {
+          "0%, 100%": { transform: "scale(1)", opacity: "1" },
+          "50%": { transform: "scale(0.5)", opacity: "0.5" },
+        },
         reversPing: {
           "100%": { transform: "scale(2)", opacity: "0" },
           "25%": { transform: "scale(1)", opacity: "1" },

@@ -54,8 +54,8 @@ const Index = (props) => {
     },
     massage: {
       key: "massage",
-      iconName: require("../../assets/images/Message.png"),
-      menuName: "Message",
+      iconName: require("../../assets/images/Massage.png"),
+      menuName: "Massage",
       isActive: false,
     },
   });
@@ -106,8 +106,8 @@ const Index = (props) => {
     },
     massage: {
       key: "massage",
-      iconName: require("../../assets/images/Message.png"),
-      menuName: "Message",
+      iconName: require("../../assets/images/Massage.png"),
+      menuName: "Massage",
       isActive: false,
     },
   });

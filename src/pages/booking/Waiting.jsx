@@ -12,6 +12,7 @@ const Index = (props) => {
       description:
         "Layered hair is a hairstyle that gives the illusion of Layered hair is a hairstyle that gives the illusion of",
       tagName: "50%",
+      type: "pending",
       isActive: false,
     },
     {
@@ -22,6 +23,7 @@ const Index = (props) => {
       description:
         "Layered hair is a hairstyle that gives the illusion of Layered hair is a hairstyle that gives the illusion of",
       tagName: "",
+      type: "pending",
       isActive: false,
     },
     {
@@ -32,6 +34,7 @@ const Index = (props) => {
       description:
         "Layered hair is a hairstyle that gives the illusion of Layered hair is a hairstyle that gives the illusion of",
       tagName: "50%",
+      type: "pending",
       isActive: false,
     },
   ]);
@@ -52,6 +55,7 @@ const Index = (props) => {
           }
           tagName={updatedItemsList[idx].tagName}
           isActive={updatedItemsList[idx].isActive}
+          type={updatedItemsList[idx].type}
           onClick={() => {
             updatedItemsList[idx].isActive = !updatedItemsList[idx].isActive;
             setItemsList(updatedItemsList);

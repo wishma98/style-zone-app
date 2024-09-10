@@ -7,41 +7,37 @@ const Index = (props) => {
     {
       imgUrl: require("../../assets/images/cardImage.png"),
       title: "Woman Blunt Cut",
-      price: "$50",
-      createdAt: "2024-08-10T13:13:36.818+00:00",
-      description:
-        "Layered hair is a hairstyle that gives the illusion of Layered hair is a hairstyle that gives the illusion of",
+      closeDate: "2024-09-14",
+      closeTime: "08.00 am",
+      description: "Create a booking ",
       tagName: "50%",
       isActive: false,
     },
     {
       imgUrl: require("../../assets/images/cardImage.png"),
       title: "Woman Blunt Cut",
-      price: "$50",
-      createdAt: "2024-08-10T13:13:36.818+00:00",
-      description:
-        "Layered hair is a hairstyle that gives the illusion of Layered hair is a hairstyle that gives the illusion of",
+      closeDate: "2024-09-12",
+      closeTime: "02.00 pm",
+      description: "Create a booking ",
       tagName: "",
       isActive: false,
     },
     {
       imgUrl: require("../../assets/images/cardImage.png"),
       title: "Woman Blunt Cut",
-      price: "$50",
-      createdAt: "2024-08-10T13:13:36.818+00:00",
-      description:
-        "Layered hair is a hairstyle that gives the illusion of Layered hair is a hairstyle that gives the illusion of",
-      tagName: "50%",
+      closeDate: "2024-09-14",
+      closeTime: "08.00 am",
+      description: "Create a booking ",
+      tagName: "",
       isActive: false,
     },
     {
       imgUrl: require("../../assets/images/cardImage.png"),
       title: "Woman Blunt Cut",
-      price: "$50",
-      createdAt: "2024-08-10T13:13:36.818+00:00",
-      description:
-        "Layered hair is a hairstyle that gives the illusion of Layered hair is a hairstyle that gives the illusion of",
-      tagName: "50%",
+      closeDate: "2024-09-14",
+      closeTime: "08.00 am",
+      description: "Create a booking ",
+      tagName: "",
       isActive: false,
     },
   ]);
@@ -55,13 +51,14 @@ const Index = (props) => {
         <ItemCard
           imgUrl={updatedItemsList[idx].imgUrl}
           title={updatedItemsList[idx].title}
-          price={updatedItemsList[idx].price}
-          createdAt={updatedItemsList[idx].createdAt}
+          closeDate={updatedItemsList[idx].closeDate}
+          closeTime={updatedItemsList[idx].closeTime}
           description={
             updatedItemsList[idx].description.substring(0, 70).trimEnd() + "..."
           }
           tagName={updatedItemsList[idx].tagName}
           isActive={updatedItemsList[idx].isActive}
+          type={"closed"}
           onClick={() => {
             updatedItemsList[idx].isActive = !updatedItemsList[idx].isActive;
             setItemsList(updatedItemsList);

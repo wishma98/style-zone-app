@@ -21,11 +21,12 @@ const LandingFour = (props) => {
         </div>
 
         <div className="w-full mt-20 bottom-[10%] lg:bottom-0 flex flex-col gap-3">
-          <Button variant={"secondary"} iconNameLeft={"google"}>
+          <Button size="lg" variant={"secondary"} iconNameLeft={"google"}>
             Join with Google
           </Button>
           <Button
             variant={"primary"}
+            size="lg"
             iconNameLeft={"mail"}
             onClick={props.onClick}
           >

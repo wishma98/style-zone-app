@@ -7,41 +7,41 @@ const Index = (props) => {
     {
       imgUrl: require("../../assets/images/cardImage.png"),
       title: "Woman Blunt Cut",
-      price: "$50",
-      createdAt: "2024-08-10T13:13:36.818+00:00",
-      description:
-        "Layered hair is a hairstyle that gives the illusion of Layered hair is a hairstyle that gives the illusion of",
+      closeDate: "2024-09-14",
+      closeTime: "08.00 am",
+      description: "Re order",
       tagName: "50%",
+      type: "cancel",
       isActive: false,
     },
     {
       imgUrl: require("../../assets/images/cardImage.png"),
       title: "Woman Blunt Cut",
-      price: "$50",
-      createdAt: "2024-08-10T13:13:36.818+00:00",
-      description:
-        "Layered hair is a hairstyle that gives the illusion of Layered hair is a hairstyle that gives the illusion of",
+      closeDate: "2024-09-14",
+      closeTime: "08.00 am",
+      description: "Re order",
       tagName: "",
+      type: "cancel",
       isActive: false,
     },
     {
       imgUrl: require("../../assets/images/cardImage.png"),
       title: "Woman Blunt Cut",
-      price: "$50",
-      createdAt: "2024-08-10T13:13:36.818+00:00",
-      description:
-        "Layered hair is a hairstyle that gives the illusion of Layered hair is a hairstyle that gives the illusion of",
+      closeDate: "2024-09-14",
+      closeTime: "08.00 am",
+      description: "Re order",
       tagName: "50%",
+      type: "cancel",
       isActive: false,
     },
     {
       imgUrl: require("../../assets/images/cardImage.png"),
       title: "Woman Blunt Cut",
-      price: "$50",
-      createdAt: "2024-08-10T13:13:36.818+00:00",
-      description:
-        "Layered hair is a hairstyle that gives the illusion of Layered hair is a hairstyle that gives the illusion of",
+      closeDate: "2024-09-14",
+      closeTime: "08.00 am",
+      description: "Re order",
       tagName: "50%",
+      type: "cancel",
       isActive: false,
     },
   ]);
@@ -55,8 +55,8 @@ const Index = (props) => {
         <ItemCard
           imgUrl={updatedItemsList[idx].imgUrl}
           title={updatedItemsList[idx].title}
-          price={updatedItemsList[idx].price}
-          createdAt={updatedItemsList[idx].createdAt}
+          closeDate={updatedItemsList[idx].closeDate}
+          closeTime={updatedItemsList[idx].closeTime}
           description={
             updatedItemsList[idx].description.substring(0, 70).trimEnd() + "..."
           }

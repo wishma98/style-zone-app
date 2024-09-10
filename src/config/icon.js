@@ -51,7 +51,6 @@ import {
   RiMenuFill,
   RiChat2Line,
   RiCheckboxCircleLine,
-  RiCalendarLine,
   RiUserLine,
   RiCake2Line,
   RiMoonLine,
@@ -66,7 +65,6 @@ import {
   FiAlertTriangle,
   FiArrowLeft,
   FiArrowRight,
-  FiCalendar,
   FiChevronDown,
   FiChevronLeft,
   FiChevronRight,
@@ -90,7 +88,7 @@ import {
 
 import { HiChartBar } from "react-icons/hi";
 import { FcGoogle } from "react-icons/fc";
-import { FaTag } from "react-icons/fa";
+import { FaRegCalendar, FaTag } from "react-icons/fa";
 import {
   IoChevronBackOutline,
   IoChevronForwardOutline,
@@ -98,6 +96,8 @@ import {
 } from "react-icons/io5";
 import { MdLockOutline } from "react-icons/md";
 import { TiUser } from "react-icons/ti";
+import { IoMdInformation } from "react-icons/io";
+import { BiDollar } from "react-icons/bi";
 
 export const GetIconByName = (iconName) => {
   switch (iconName) {
@@ -117,6 +117,8 @@ export const GetIconByName = (iconName) => {
       return <RiShoppingBasketLine />;
     case "purchasing":
       return <RiPriceTag2Line />;
+    case "dollar":
+      return <BiDollar />;
     case "inventory":
       return <RiSafe2Line />;
     case "report":
@@ -157,8 +159,6 @@ export const GetIconByName = (iconName) => {
       return <FiX />;
     case "alert-triangle":
       return <FiAlertTriangle />;
-    case "calender":
-      return <FiCalendar />;
     case "dots":
       return <FiMoreHorizontal />;
     case "cart":
@@ -203,6 +203,8 @@ export const GetIconByName = (iconName) => {
       return <RiPhoneLine />;
     case "map-pin":
       return <RiMapPin2Line />;
+    case "info":
+      return <IoMdInformation />;
     case "point":
       return <RiMapPin2Line />;
     case "arrow-down":
@@ -283,8 +285,8 @@ export const GetIconByName = (iconName) => {
       return <RiChat2Line />;
     case "chech-circle":
       return <RiCheckboxCircleLine />;
-    case "calander":
-      return <RiCalendarLine />;
+    case "calendar":
+      return <FaRegCalendar />;
     case "user-line":
       return <RiUserLine />;
     default:

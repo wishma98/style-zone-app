@@ -10,6 +10,10 @@ import TagComponent from "./tagComponent";
 import ItemCard from "./cards/itemCard";
 import RecentCard from "./cards/recentCard";
 import TabComponent from "./tabComponent";
+import NotificationCard from "./cards/notificationCard";
+import ChatHeaderComponent from "./chatHeaderComponent";
+import ChatMessageComponent from "./chatMessageComponent";
+import MessageInputComponent from "./messageInputComponent";
 
 export {
   Button,
@@ -24,4 +28,8 @@ export {
   ItemCard,
   RecentCard,
   TabComponent,
+  NotificationCard,
+  ChatHeaderComponent,
+  ChatMessageComponent,
+  MessageInputComponent,
 };

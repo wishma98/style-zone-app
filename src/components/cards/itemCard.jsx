@@ -41,12 +41,11 @@ const Index = (props) => {
                   </div>
                 </>
               )}
-              {!props.closeDate && (
+              {props.closeDate && (
                 <>
                   <div className="font-manrope font-bold text-16px text-grey-100">
                     {props.closeDate}
                   </div>
-                  <div className="w-1 h-1 rounded-full bg-[#C4C4C4]" />
                   <div className="font-nunito font-normal text-12px text-grey-80">
                     {props.closeTime}
                   </div>
@@ -62,23 +61,48 @@ const Index = (props) => {
             </p>
           </div>
         </div>
-        <div className="flex flex-col justify-between items-end py-4 pr-4">
-          {props.tagName && (
-            <div className="flex">
-              <TagComponent iconName={"tag"} tagName={props.tagName} />
+        {props.type !== "closed" && (
+          <div className="flex flex-col justify-between items-end py-4 pr-4">
+            {props.tagName && (
+              <div className="flex">
+                <TagComponent iconName={"tag"} tagName={props.tagName} />
+              </div>
+            )}
+            {!props.tagName && <div className="flex" />}
+            <div className="flex justify-end">
+              <Button
+                variant={
+                  props.isActive ||
+                  props.type === "pending" ||
+                  props.type === "cancel" ||
+                  props.type === "confirmed"
+                    ? "iconButton-secondary"
+                    : "iconButton"
+                }
+                size={
+                  props.type === "pending" ||
+                  props.type === "cancel" ||
+                  props.type === "confirmed"
+                    ? "sm"
+                    : "md"
+                }
+                onClick={props.type === "" && props.onClick}
+              >
+                {GetIconByName(
+                  props.isActive
+                    ? "minus"
+                    : props.type === "pending"
+                    ? "info"
+                    : props.type === "cancel"
+                    ? "cross"
+                    : props.type === "confirmed"
+                    ? "users"
+                    : "plus"
+                )}
+              </Button>
             </div>
-          )}
-          {!props.tagName && <div className="flex" />}
-          <div className="flex justify-end">
-            <Button
-              variant={props.isActive ? "iconButton-secondary" : "iconButton"}
-              size="md"
-              onClick={props.onClick}
-            >
-              {GetIconByName(props.isActive ? "minus" : "plus")}
-            </Button>
           </div>
-        </div>
+        )}
       </div>
     </>
   );

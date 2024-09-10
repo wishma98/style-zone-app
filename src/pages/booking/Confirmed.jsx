@@ -12,7 +12,8 @@ const Index = (props) => {
       description:
         "Layered hair is a hairstyle that gives the illusion of Layered hair is a hairstyle that gives the illusion of",
       tagName: "50%",
-      isActive: true,
+      type: "confirmed",
+      isActive: false,
     },
     {
       imgUrl: require("../../assets/images/cardImage.png"),
@@ -22,16 +23,7 @@ const Index = (props) => {
       description:
         "Layered hair is a hairstyle that gives the illusion of Layered hair is a hairstyle that gives the illusion of",
       tagName: "",
-      isActive: true,
-    },
-    {
-      imgUrl: require("../../assets/images/cardImage.png"),
-      title: "Woman Blunt Cut",
-      price: "$50",
-      createdAt: "2024-08-10T13:13:36.818+00:00",
-      description:
-        "Layered hair is a hairstyle that gives the illusion of Layered hair is a hairstyle that gives the illusion of",
-      tagName: "50%",
+      type: "confirmed",
       isActive: false,
     },
     {
@@ -42,6 +34,18 @@ const Index = (props) => {
       description:
         "Layered hair is a hairstyle that gives the illusion of Layered hair is a hairstyle that gives the illusion of",
       tagName: "50%",
+      type: "confirmed",
+      isActive: false,
+    },
+    {
+      imgUrl: require("../../assets/images/cardImage.png"),
+      title: "Woman Blunt Cut",
+      price: "$50",
+      createdAt: "2024-08-10T13:13:36.818+00:00",
+      description:
+        "Layered hair is a hairstyle that gives the illusion of Layered hair is a hairstyle that gives the illusion of",
+      tagName: "50%",
+      type: "confirmed",
       isActive: false,
     },
   ]);
@@ -62,6 +66,7 @@ const Index = (props) => {
           }
           tagName={updatedItemsList[idx].tagName}
           isActive={updatedItemsList[idx].isActive}
+          type={updatedItemsList[idx].type}
           onClick={() => {
             updatedItemsList[idx].isActive = !updatedItemsList[idx].isActive;
             setItemsList(updatedItemsList);
