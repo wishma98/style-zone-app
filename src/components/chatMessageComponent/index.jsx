@@ -1,23 +1,37 @@
 import React from "react";
 
-const Index = ({ imgUrl, message, isSender, isTyping, time, image }) => {
+const Index = ({ file, message, isSender, isTyping, time, image }) => {
   return (
     <div className={`flex ${isSender ? "justify-end" : "justify-start"} mb-4`}>
-      {!isSender && (
-        <img
-          src={imgUrl}
-          alt="Sender Avatar"
-          className="w-10 h-10 rounded-full mr-2"
-        />
+      {!isSender && image && (
+        <img src={image} alt="user-img" className="w-8 h-8 rounded-full mr-2" />
       )}
       {!isTyping && (
-        <div>
-          {image ? (
-            <img
-              src={image}
-              alt="message-img"
-              className="w-32 h-32 rounded-lg"
-            />
+        <div className="flex flex-col">
+          {file ? (
+            <div
+              className={`w-56 ${
+                isSender
+                  ? "bg-brand-primary-light rounded-sender "
+                  : "bg-grey-100 rounded-receiver "
+              } text-white p-3 max-w-xs`}
+            >
+              {file.fileType.startsWith("image/") ? (
+                <img
+                  src={file.fileContent}
+                  alt={file.fileName}
+                  className="w-full h-full rounded-sm"
+                />
+              ) : (
+                <a
+                  href={file.fileContent}
+                  download={file.fileName}
+                  className="text-blue-500 underline"
+                >
+                  {file.fileName}
+                </a>
+              )}
+            </div>
           ) : (
             <div
               className={`font-nunito font-normal text-14px ${
@@ -40,9 +54,9 @@ const Index = ({ imgUrl, message, isSender, isTyping, time, image }) => {
               : "bg-grey-100 rounded-receiver "
           } text-white p-3 max-w-xs`}
         >
-          <span className="block w-2 h-2 bg-gray-500 rounded-full animate-typing-dot"></span>
           <span className="block w-2 h-2 bg-gray-500 rounded-full animate-typing-dot delay-200"></span>
-          <span className="block w-2 h-2 bg-gray-500 rounded-full animate-typing-dot delay-400"></span>
+          <span className="block w-2 h-2 bg-gray-500 rounded-full animate-typing-dot delay-75"></span>
+          <span className="block w-2 h-2 bg-gray-500 rounded-full animate-typing-dot delay-1000"></span>
         </div>
       )}
     </div>

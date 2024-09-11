@@ -13,6 +13,8 @@ const socket = io("http://localhost:3000");
 const Messages = () => {
   const [messages, setMessages] = useState([]);
   const [isTyping, setIsTyping] = useState(false);
+  const [isSender, setIsSender] = useState(false);
+  const [selectedFile, setSelectedFile] = useState(false);
   const [viewPointWidth, setViewPointWidth] = useState(0);
   const [viewPointHeight, setViewPointHeight] = useState(0);
 
@@ -71,10 +73,14 @@ const Messages = () => {
     setIsTyping(isTyping);
   };
 
+  const selectFile = (file) => {
+    setSelectedFile(file);
+  };
   // Send message function
   const sendMessage = (message) => {
-    socket.emit("message", message); // Send message to server
-    setMessages((prevMessages) => [...prevMessages, message]); // Add message to local state
+    socket.emit("message", message);
+    setIsSender(message?.isSender || false);
+    setMessages((prevMessages) => [...prevMessages, message]);
     handleTyping(false);
   };
 
@@ -85,7 +91,9 @@ const Messages = () => {
         renderView={(props) => (
           <div {...props} style={{ ...props.style, overflowX: "hidden" }} />
         )}
-        style={{ height: viewPointHeight - 210 }}
+        style={{
+          height: selectedFile ? viewPointHeight - 280 : viewPointHeight - 210,
+        }}
       >
         {/* Header */}
         <ChatHeaderComponent
@@ -103,7 +111,8 @@ const Messages = () => {
                 message={msg.text}
                 isSender={msg.isSender}
                 time={moment(msg.time).format("LT")}
-                imgUrl={require("../../assets/images/user.png")}
+                file={msg?.file}
+                image={require("../../assets/images/user.png")}
               />
             </>
           ))}
@@ -111,18 +120,20 @@ const Messages = () => {
           {/* Typing indicator */}
           {isTyping && (
             <ChatMessageComponent
-              message="..."
+              message=""
               isTyping={true}
-              isSender={false}
-              time={moment().format("LT")}
-              imgUrl={require("../../assets/images/user.png")}
+              isSender={isSender}
             />
           )}
         </div>
       </Scrollbars>
 
       {/* Message Input */}
-      <MessageInputComponent onSend={sendMessage} setIsTyping={handleTyping} />
+      <MessageInputComponent
+        onSend={sendMessage}
+        setIsTyping={handleTyping}
+        setSelectFile={selectFile}
+      />
     </div>
   );
 };
