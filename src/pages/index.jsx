@@ -8,6 +8,7 @@ import Dashboard from "./dashboard";
 import Services from "./services";
 import Booking from "./booking";
 import Notifications from "./notifications";
+import Profile from "./profile";
 
 export {
   Console,
@@ -20,4 +21,5 @@ export {
   Services,
   Booking,
   Notifications,
+  Profile,
 };

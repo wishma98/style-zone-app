@@ -7,7 +7,11 @@ const Index = ({ file, message, isSender, isTyping, time, image }) => {
         <img src={image} alt="user-img" className="w-8 h-8 rounded-full mr-2" />
       )}
       {!isTyping && (
-        <div className="flex flex-col">
+        <div
+          className={`flex flex-col ${
+            isSender ? "justify-end" : "justify-start"
+          }`}
+        >
           {file ? (
             <div
               className={`w-56 ${
@@ -34,16 +38,18 @@ const Index = ({ file, message, isSender, isTyping, time, image }) => {
             </div>
           ) : (
             <div
-              className={`font-nunito font-normal text-14px ${
+              className={`font-nunito font-normal text-12px lg:text-14px xl:text-14px ${
                 isSender
                   ? "bg-brand-primary-light rounded-sender "
                   : "bg-grey-100 rounded-receiver "
-              } text-white p-3 max-w-xs`}
+              } text-white p-2 lg:p-3 xl:p-3 max-w-xs`}
             >
               <p>{message}</p>
             </div>
           )}
-          <p className="text-xs text-gray-500 mt-1">{time}</p>
+          <p className=" text-10px lg:text-12px xl:text-12px text-gray-500 mt-1">
+            {time}
+          </p>
         </div>
       )}
       {isTyping && (

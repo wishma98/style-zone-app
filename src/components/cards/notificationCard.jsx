@@ -5,7 +5,8 @@ const Index = (props) => {
   return (
     <>
       <div
-        className={`flex flex-row justify-between items-center border-b py-4 gap-3 w-full`}
+        className={`flex flex-row justify-between items-center border-b cursor-pointer py-4 gap-3 w-full`}
+        onClick={props.onClick}
       >
         <div className="flex flex-row gap-3">
           <div className="flex items-center justify-center bg-brand-primary-light text-2xl text-brand-secondary w-12 h-12 min-w-12 rounded-full">

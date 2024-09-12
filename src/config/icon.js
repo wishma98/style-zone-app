@@ -6,7 +6,6 @@ import {
   RiDashboardLine,
   RiFundsBoxLine,
   RiHome5Line,
-  RiLock2Line,
   RiMapPin2Line,
   RiPaintBrushLine,
   RiPhoneLine,
@@ -71,6 +70,7 @@ import {
   FiChevronUp,
   FiEdit2,
   FiGrid,
+  FiLogOut,
   FiMinus,
   FiMoreHorizontal,
   FiPlus,
@@ -94,9 +94,9 @@ import {
   IoChevronForwardOutline,
   IoMailOutline,
 } from "react-icons/io5";
-import { MdLockOutline } from "react-icons/md";
+import { MdLockOutline, MdOutlinePayment } from "react-icons/md";
 import { TiUser } from "react-icons/ti";
-import { IoMdInformation } from "react-icons/io";
+import { IoIosInformationCircleOutline, IoMdInformation } from "react-icons/io";
 import { BiDollar } from "react-icons/bi";
 
 export const GetIconByName = (iconName) => {
@@ -161,6 +161,8 @@ export const GetIconByName = (iconName) => {
       return <FiAlertTriangle />;
     case "dots":
       return <FiMoreHorizontal />;
+    case "vault":
+      return <MdOutlinePayment />;
     case "cart":
       return <FiShoppingCart />;
     case "printer":
@@ -190,7 +192,7 @@ export const GetIconByName = (iconName) => {
     case "eyeOff":
       return <RiEyeOffFill />;
     case "logout":
-      return <RiLock2Line />;
+      return <FiLogOut />;
     case "profile":
       return <RiUser2Fill />;
     case "trash":
@@ -203,6 +205,8 @@ export const GetIconByName = (iconName) => {
       return <RiPhoneLine />;
     case "map-pin":
       return <RiMapPin2Line />;
+    case "info-circle":
+      return <IoIosInformationCircleOutline />;
     case "info":
       return <IoMdInformation />;
     case "point":

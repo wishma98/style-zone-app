@@ -8,7 +8,7 @@ const Index = (props) => {
       }`}
     >
       <div
-        className="w-16 h-16 flex px-[14px] py-3 rounded-full text-brand-secondary bg-brand-primary-light cursor-pointer hover:bg-opacity-90 "
+        className="lg:w-16 xl:w-16 lg:h-16 xl:h-16 w-14 md:w-16 h-14 md:h-16 flex px-[14px] py-3 rounded-full text-brand-secondary bg-brand-primary-light cursor-pointer hover:bg-opacity-90 "
         onClick={props.onClick}
       >
         <img
@@ -17,7 +17,7 @@ const Index = (props) => {
           src={props.iconName}
         />
       </div>
-      <div className="font-manrope font-semibold text-14px text-brand mt-2">
+      <div className="font-manrope font-semibold text-12px lg:text-14px xl:text-14px text-brand mt-2">
         {props.menuName}
       </div>
     </div>

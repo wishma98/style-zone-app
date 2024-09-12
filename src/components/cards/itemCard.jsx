@@ -25,28 +25,28 @@ const Index = (props) => {
           </div>
           <div className="w-full flex flex-col justify-between max-w-full py-4 pl-4">
             <div className={"flex flex-row justify-between items-center"}>
-              <div className="font-manrope font-normal text-14px text-grey-100">
+              <div className="font-manrope font-normal text-[13px] lg:text-14px xl:text-14px text-grey-100">
                 {props.title}
               </div>
             </div>
             <div className="flex flex-row items-center gap-2">
               {!props.closeDate && (
                 <>
-                  <div className="font-manrope font-bold text-16px text-grey-100">
+                  <div className="font-manrope font-bold text-12px lg:text-16px xl:text-16px text-grey-100">
                     {props.price}
                   </div>
                   <div className="w-1 h-1 rounded-full bg-[#C4C4C4]" />
-                  <div className="font-nunito font-normal text-12px text-grey-80">
+                  <div className="font-nunito font-normal text-10px lg:text-12px xl:text-12px text-grey-80">
                     {moment(props.createAt).startOf("day").fromNow()}
                   </div>
                 </>
               )}
               {props.closeDate && (
                 <>
-                  <div className="font-manrope font-bold text-16px text-grey-100">
+                  <div className="font-manrope font-bold text-12px lg:text-16px xl:text-16px text-grey-100">
                     {props.closeDate}
                   </div>
-                  <div className="font-nunito font-normal text-12px text-grey-80">
+                  <div className="font-nunito font-normal text-10px lg:text-12px xl:text-12px text-grey-80">
                     {props.closeTime}
                   </div>
                 </>
@@ -54,7 +54,7 @@ const Index = (props) => {
             </div>
             <p
               className={
-                "flex flex-wrap font-nunito font-normal text-12px text-grey-80"
+                "flex flex-wrap font-nunito font-normal text-10px lg:text-12px xl:text-12px text-grey-80"
               }
             >
               {props.description}

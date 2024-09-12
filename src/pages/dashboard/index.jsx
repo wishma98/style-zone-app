@@ -184,7 +184,7 @@ const Index = (props) => {
   };
 
   return (
-    <div className=" relative h-auto mb-8 py-11 px-4">
+    <div className=" relative h-auto mb-8 py-11 px-5">
       <header className={props.className}>
         <div className="flex flex-row justify-between items-center">
           <FormHeader
@@ -246,7 +246,7 @@ const Index = (props) => {
         </div>
       </section>
       {/* reviews */}
-      <section>
+      <section className="mt-24">
         <div className="flex flex-row justify-between items-center mt-5">
           <div className="text-brand text-16px font-manrope font-bold">
             What do you want to do?

@@ -85,22 +85,29 @@ const Messages = () => {
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col mx-[-14px]">
+      {/* Header */}
+      <ChatHeaderComponent
+        isOnline={true}
+        chatName={"The Style Zone"}
+        isVideoCall={true}
+        imgUrl={require("../../assets/images/user.png")}
+      />
       <Scrollbars
         onScroll={handleOnScroll}
         renderView={(props) => (
           <div {...props} style={{ ...props.style, overflowX: "hidden" }} />
         )}
         style={{
-          height: selectedFile ? viewPointHeight - 280 : viewPointHeight - 210,
+          height: selectedFile
+            ? viewPointWidth < 1028
+              ? viewPointHeight - 310
+              : viewPointHeight - 360
+            : viewPointWidth < 1028
+            ? viewPointHeight - 240
+            : viewPointHeight - 280,
         }}
       >
-        {/* Header */}
-        <ChatHeaderComponent
-          isOnline={true}
-          imgUrl={require("../../assets/images/user.png")}
-        />
-
         {/* Messages */}
         <div className="flex-1 p-4 space-y-4 overflow-y-auto">
           {messages.map((msg, index) => (

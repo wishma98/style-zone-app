@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   FormHeader,
@@ -13,6 +13,38 @@ import { withRouter } from "react-router-dom/cjs/react-router-dom";
 
 const Index = (props) => {
   const [searchItem, setSearchItem] = useState("");
+
+  const [viewPointWidth, setViewPointWidth] = useState(0);
+
+  useEffect(() => {
+    updateWindowDimensions();
+    window.addEventListener("resize", updateWindowDimensions);
+    window.addEventListener("scroll", handleOnScroll);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      window.removeEventListener("scroll", handleOnScroll);
+      window.removeEventListener("resize", updateWindowDimensions);
+    };
+  }, []);
+
+  const updateWindowDimensions = () => {
+    setViewPointWidth(window.innerWidth);
+  };
+
+  const handleOnScroll = () => {
+    let scrollTop =
+      (document.documentElement && document.documentElement.scrollTop) ||
+      document.body.scrollTop;
+    let scrollHeight =
+      (document.documentElement && document.documentElement.scrollHeight) ||
+      document.body.scrollHeight;
+    let clientHeight =
+      document.documentElement.clientHeight || window.innerHeight;
+  };
+
   const [menuItems, setMenuItems] = useState({
     haircut: {
       key: "haircut",
@@ -230,7 +262,11 @@ const Index = (props) => {
           price={updatedItemsList[idx].price}
           createdAt={updatedItemsList[idx].createdAt}
           description={
-            updatedItemsList[idx].description.substring(0, 70).trimEnd() + "..."
+            viewPointWidth > 1028
+              ? updatedItemsList[idx].description.substring(0, 70).trimEnd() +
+                "..."
+              : updatedItemsList[idx].description.substring(0, 50).trimEnd() +
+                "..."
           }
           tagName={updatedItemsList[idx].tagName}
           isActive={updatedItemsList[idx].isActive}
@@ -245,8 +281,8 @@ const Index = (props) => {
   };
 
   return (
-    <div className=" relative h-auto mb-8 py-11 px-4">
-      <header className={props.className}>
+    <div className=" relative h-auto mb-8 px-5">
+      <header className={" mx-[-14px]"}>
         <PageNavigation
           title={"Services"}
           onClick={() => {

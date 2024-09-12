@@ -4,7 +4,7 @@ import { GetIconByName } from "../../config/icon";
 
 const index = (props) => {
   const rootClassName = cn(
-    ` w-full group text-[16px] md:text-sm lg:text-15px leading-4 inline-flex items-center cursor-pointer transition ease-in-out duration-300 font-body font-semibold text-center justify-center tracking-[0.2px] rounded-[50px] placeholder-white focus-visible:outline-none focus:outline-none `,
+    ` w-full group text-10px max-sm:text-14px md:text-16px lg:text-16px xl:text-16px leading-4 inline-flex items-center cursor-pointer transition ease-in-out duration-300 font-body font-semibold text-center justify-center tracking-[0.2px] rounded-[50px] placeholder-white focus-visible:outline-none focus:outline-none `,
     {
       "h-auto bg-brand-primary-100 text-white tracking-widest hover:text-white hover:bg-brand-primary-100/80 ":
         props.variant === "primary",
@@ -30,9 +30,9 @@ const index = (props) => {
       ref={props.ref}
       className={
         props.size === "sm"
-          ? rootClassName + " px-2 py-2 "
+          ? rootClassName + " p-1.5 lg:p-2 xl:p-2 "
           : props.size === "md"
-          ? rootClassName + " px-3 py-3 "
+          ? rootClassName + " p-2 lg:p-3 xl:p-3 "
           : rootClassName + " px-4 md:px-6 lg:px-8 py-4 md:py-3.5 lg:py-4 "
       }
       disabled={props.disabled}

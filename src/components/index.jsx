@@ -14,6 +14,7 @@ import NotificationCard from "./cards/notificationCard";
 import ChatHeaderComponent from "./chatHeaderComponent";
 import ChatMessageComponent from "./chatMessageComponent";
 import MessageInputComponent from "./messageInputComponent";
+import OptionCard from "./cards/optionCard";
 
 export {
   Button,
@@ -32,4 +33,5 @@ export {
   ChatHeaderComponent,
   ChatMessageComponent,
   MessageInputComponent,
+  OptionCard,
 };

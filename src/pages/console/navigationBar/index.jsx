@@ -10,14 +10,12 @@ import NavigationComponent from "./navigationComponent";
 import { withRouter } from "react-router-dom/cjs/react-router-dom";
 
 const NavigationBar = (props) => {
-  const [menuName, setMenuName] = useState("home");
   return (
     <div className="w-full flex space-x-10 justify-around bg-white p-4 border-b">
       <NavigationComponent
         iconName={<FaHome />}
         isActive={props.location.pathname === "/"}
         onClick={() => {
-          setMenuName("home");
           props.history.push("/");
         }}
       />
@@ -25,7 +23,6 @@ const NavigationBar = (props) => {
         iconName={<FaInfoCircle />}
         isActive={props.location.pathname === "/services"}
         onClick={() => {
-          setMenuName("service");
           props.history.push("/services");
         }}
       />
@@ -33,24 +30,22 @@ const NavigationBar = (props) => {
         iconName={<FaCalendarAlt />}
         isActive={props.location.pathname === "/booking"}
         onClick={() => {
-          setMenuName("schedule");
           props.history.push("/booking");
         }}
       />
       <NavigationComponent
         iconName={<FaEnvelope />}
-        isActive={props.location.pathname === "notifications"}
+        isActive={props.location.pathname === "/notifications"}
         activeNotification={true}
         onClick={() => {
-          setMenuName("notification");
           props.history.push("/notifications");
         }}
       />
       <NavigationComponent
         iconName={<FaUserCircle />}
-        isActive={menuName === "profile"}
+        isActive={props.location.pathname === "/profile"}
         onClick={() => {
-          setMenuName("profile");
+          props.history.push("/profile");
         }}
       />
     </div>

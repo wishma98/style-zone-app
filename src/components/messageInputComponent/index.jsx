@@ -36,7 +36,7 @@ const MessageInput = ({ onSend, setIsTyping, setSelectFile }) => {
 
       onSend({
         text: message,
-        isSender: true,
+        isSender: false,
         time: currentTime,
         file: fileData,
       });
@@ -60,7 +60,7 @@ const MessageInput = ({ onSend, setIsTyping, setSelectFile }) => {
   };
 
   return (
-    <div className="flex flex-col h-auto items-start p-4 bg-white border-t">
+    <div className="flex flex-col h-auto items-start px-4 py-2 bg-white border-t">
       {selectedFile && (
         <div
           className=" w-16 h-16 rounded-sm my-1 ml-12 cursor-pointer"
@@ -89,9 +89,9 @@ const MessageInput = ({ onSend, setIsTyping, setSelectFile }) => {
       <div className="flex flex-row items-center w-full">
         <button
           onClick={() => document.getElementById("file-input").click()}
-          className="mr-3 text-gray-500"
+          className="mr-3 text-16px lg:text-xl xl:text-xl text-gray-500"
         >
-          <FiPaperclip size={20} />
+          <FiPaperclip />
         </button>
         {/* Hidden file input */}
         <input
@@ -106,15 +106,15 @@ const MessageInput = ({ onSend, setIsTyping, setSelectFile }) => {
           type="text"
           placeholder="Type a message"
           onChange={(e) => setMessage(e.target.value)}
-          className="flex-1 p-3 rounded-full bg-gray-100 border border-transparent focus:outline-none focus:ring-2 focus:ring-brand-primary-light"
+          className="flex-1 p-2 lg:p-3 xl:p-3 rounded-full bg-gray-100 border border-transparent focus:outline-none focus:ring-2 focus:ring-brand-primary-light"
           onKeyDown={(e) => e.key === "Enter" && handleSend()}
           value={message}
         />
         <button
-          className="ml-3 bg-brand-primary-light text-white p-3 rounded-full"
+          className="ml-3 bg-brand-primary-light text-white p-2 lg:p-3 xl:p-3 text-16px lg:text-xl xl:text-xl rounded-full"
           onClick={handleSend}
         >
-          <FiSend size={20} />
+          <FiSend />
         </button>
       </div>
     </div>

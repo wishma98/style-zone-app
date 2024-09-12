@@ -5,7 +5,7 @@ import { GetIconByName } from "../../config/icon";
 const Index = (props) => {
   const [passwordShown, setPasswordShown] = useState(false);
   const classes = {
-    root: " px-6 py-5 w-full border-grey-20 appearance-none transition duration-150 ease-in-out text-input text-13px lg:text-sm font-body placeholder-[#B3B3B3] min-h-12 transition duration-200 ease-in-out text-brand-dark dark:grey-100-border-default focus:ring-0 focus:dark:text-grey-100 active:dark:grey-100-border-default active:dark:text-grey-100 dark:text-grey-100 focus:dark:grey-100-border-default",
+    root: "  px-4 py-3 lg:px-6 xl:px-6 lg:py-5 xl:py-5 w-full border-grey-20 appearance-none transition duration-150 ease-in-out text-input text-13px lg:text-sm font-body placeholder-[#B3B3B3] min-h-12 transition duration-200 ease-in-out text-brand-dark dark:grey-100-border-default focus:ring-0 focus:dark:text-grey-100 active:dark:grey-100-border-default active:dark:text-grey-100 dark:text-grey-100 focus:dark:grey-100-border-default",
     normal:
       "font-nunito font-normal text-14px text-grey-100 bg-grey-20 border border-solid border-grey-20 rounded-full hover:border-grey-100 hover:bg-white focus:shadow focus:text-grey-100 focus:border-grey-100 active:text-grey-100 active:bg-white focus:bg-white",
     solid:
@@ -86,7 +86,7 @@ const Index = (props) => {
       {props.leftIcon && (
         <p
           className={
-            "absolute top-6 left-4 text-16px text-grey-60 active:text-grey-100 focus:text-grey-100"
+            "absolute top-4 lg:top-6 xl:top-6 left-4 text-16px text-grey-60 active:text-grey-100 focus:text-grey-100"
           }
         >
           {GetIconByName(props.leftIcon)}

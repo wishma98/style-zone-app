@@ -3,7 +3,7 @@ import { GetIconByName } from "../../config/icon";
 
 const Index = (props) => {
   const classes = {
-    root: "w-auto h-auto bg-brand-secondary/20 font-manrope font-bold text-12px text-brand-secondary px-2 py-1 rounded-[50px]",
+    root: "w-auto h-auto bg-brand-secondary/20 font-manrope font-bold text-10px lg:text-12px xl:text-12px text-brand-secondary px-2 py-1 rounded-[50px]",
     default:
       "bg-[#F0F4F3] text-font-child3 dark:border-dark-border-default dark:bg-dark-secondary-bg dark:text-dark-font-child1",
     white:

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { NotificationCard } from "../../components";
 import { withRouter } from "react-router-dom/cjs/react-router-dom.min";
+import { useDispatch } from "react-redux";
+import { openNotificationModal } from "../modals/NotificationModal/redux/notification-modal-action";
 
 const Notifications = (props) => {
   const [newList, setNewList] = useState([
@@ -39,6 +41,8 @@ const Notifications = (props) => {
     },
   ]);
 
+  const dispatch = useDispatch();
+
   const updatedNewList = { ...newList };
   const updatedEarlierList = { ...earlierList };
 
@@ -54,6 +58,7 @@ const Notifications = (props) => {
           onClick={() => {
             updatedNewList[idx].isActive = !updatedNewList[idx].isActive;
             setNewList(updatedNewList);
+            dispatch(openNotificationModal(updatedEarlierList[idx]));
           }}
         />
       );
@@ -74,6 +79,7 @@ const Notifications = (props) => {
             updatedEarlierList[idx].isActive =
               !updatedEarlierList[idx].isActive;
             setEarlierList(updatedEarlierList);
+            dispatch(openNotificationModal(updatedEarlierList[idx]));
           }}
         />
       );

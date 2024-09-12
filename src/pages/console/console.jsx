@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { withRouter } from "react-router-dom";
 import NavigationBar from "./navigationBar";
-import { Booking, Dashboard, Notifications, Services } from "..";
+import { Booking, Dashboard, Notifications, Profile, Services } from "..";
 import Scrollbars from "react-custom-scrollbars-2";
+import { NotificationModal } from "../modals";
+import { useSelector } from "react-redux";
 
 const Index = (props) => {
   const [viewPointWidth, setViewPointWidth] = useState(0);
   const [viewPointHeight, setViewPointHeight] = useState(0);
+
+  const { isOpenNotificationModal } = useSelector(
+    ({ notificationsReducer }) => notificationsReducer
+  );
 
   useEffect(() => {
     updateWindowDimensions();
@@ -40,6 +46,7 @@ const Index = (props) => {
 
   return (
     <div className={"bg-white h-full flex flex-col justify-between"}>
+      {isOpenNotificationModal && <NotificationModal />}
       <Scrollbars
         onScroll={handleOnScroll}
         renderView={(props) => (
@@ -51,6 +58,7 @@ const Index = (props) => {
         {props.location.pathname === "/services" && <Services />}
         {props.location.pathname === "/booking" && <Booking />}
         {props.location.pathname === "/notifications" && <Notifications />}
+        {props.location.pathname === "/profile" && <Profile />}
       </Scrollbars>
       <footer className="w-full fixed bottom-0 z-50">
         <NavigationBar />

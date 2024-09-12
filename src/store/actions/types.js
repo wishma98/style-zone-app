@@ -1,0 +1,8 @@
+export const AUTH_START = "AUTH_START";
+export const AUTH_SUCCESS = "AUTH_SUCCESS";
+export const AUTH_FAIL = "AUTH_FAIL";
+export const SET_RAW_CREDENTIALS = "SET_RAW_CREDENTIALS";
+export const APP_LOGOUT = "APP_LOGOUT";
+export const AUTH_REFRESH_SUCCESS = "AUTH_REFRESH_SUCCESS";
+
+export const IS_LOADING = "IS_LOADING";

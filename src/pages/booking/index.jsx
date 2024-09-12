@@ -54,8 +54,8 @@ const Index = (props) => {
   ];
 
   return (
-    <div className=" relative h-auto mb-8 py-11 px-4">
-      <header className={props.className}>
+    <div className=" relative h-auto mb-8 px-5">
+      <header className={" mx-[-14px]"}>
         <PageNavigation
           title={"Booking"}
           onClick={() => {
@@ -63,7 +63,7 @@ const Index = (props) => {
           }}
         />
       </header>
-      <div className="text-grey-100 text-16px font-manrope font-normal mt-4">
+      <div className="text-grey-100 text-16px font-manrope font-bold mt-4">
         Waiting for
       </div>
       <TabComponent object={tabJson} />
