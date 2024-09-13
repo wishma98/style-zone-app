@@ -34,11 +34,11 @@ code {
   }
 }
 
-.slider {
+.landing-slider {
   animation: slide 2s ease-in-out forwards;
 }
 
-.dot {
+.ls_dot {
   animation: dotFade 2s ease-in-out infinite;
 }
 
@@ -111,4 +111,7 @@ code {
   background: black;
   opacity: 0.5;
   z-index: 62;
+}
+.slick-slide {
+  margin: 0 8px;
 }

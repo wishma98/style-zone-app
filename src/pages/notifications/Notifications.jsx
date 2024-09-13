@@ -56,8 +56,6 @@ const Notifications = (props) => {
           time={updatedNewList[idx].time}
           isNew={updatedNewList[idx].isNew}
           onClick={() => {
-            updatedNewList[idx].isActive = !updatedNewList[idx].isActive;
-            setNewList(updatedNewList);
             dispatch(openNotificationModal(updatedEarlierList[idx]));
           }}
         />
@@ -76,9 +74,6 @@ const Notifications = (props) => {
           time={updatedEarlierList[idx].time}
           isNew={updatedEarlierList[idx].isNew}
           onClick={() => {
-            updatedEarlierList[idx].isActive =
-              !updatedEarlierList[idx].isActive;
-            setEarlierList(updatedEarlierList);
             dispatch(openNotificationModal(updatedEarlierList[idx]));
           }}
         />

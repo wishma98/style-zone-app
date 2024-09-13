@@ -23,12 +23,12 @@ const LandingOne = (props) => {
           <div
             className={`h-2 ${
               props.isActive
-                ? "bg-brand-secondary-100 w-[30px] rounded-md slider"
+                ? "bg-brand-secondary-100 w-[30px] rounded-md landing-slider"
                 : "w-2 bg-white rounded-full"
             }`}
           />
-          <div className={`h-2 w-2 bg-white rounded-full dot`} />
-          <div className={`h-2 w-2 bg-white rounded-full dot`} />
+          <div className={`h-2 w-2 bg-white rounded-full ls_dot`} />
+          <div className={`h-2 w-2 bg-white rounded-full ls_dot`} />
         </div>
         <div className="w-full mt-20 bottom-[10%] lg:bottom-0">
           <Button size="lg" variant={"primary"} onClick={props.onClick}>

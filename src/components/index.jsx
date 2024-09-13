@@ -15,6 +15,9 @@ import ChatHeaderComponent from "./chatHeaderComponent";
 import ChatMessageComponent from "./chatMessageComponent";
 import MessageInputComponent from "./messageInputComponent";
 import OptionCard from "./cards/optionCard";
+import TimeComponent from "./timeComponent";
+import DateComponent from "./dateComponent";
+import UserProfileComponent from "./userProfileComponent";
 
 export {
   Button,
@@ -34,4 +37,7 @@ export {
   ChatMessageComponent,
   MessageInputComponent,
   OptionCard,
+  DateComponent,
+  TimeComponent,
+  UserProfileComponent,
 };

@@ -10,11 +10,16 @@ import {
 } from "../../components";
 import { GetIconByName } from "../../config/icon";
 import { withRouter } from "react-router-dom/cjs/react-router-dom";
+import { useDispatch } from "react-redux";
+import { openServicesDetailsModal } from "../modals/ServiceDetailModal/redux/service-modal-action";
+import Scrollbars from "react-custom-scrollbars-2";
 
 const Index = (props) => {
   const [searchItem, setSearchItem] = useState("");
-
   const [viewPointWidth, setViewPointWidth] = useState(0);
+  const [viewPointHeight, setViewPointHeight] = useState(0);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     updateWindowDimensions();
@@ -32,6 +37,7 @@ const Index = (props) => {
 
   const updateWindowDimensions = () => {
     setViewPointWidth(window.innerWidth);
+    setViewPointHeight(window.innerHeight);
   };
 
   const handleOnScroll = () => {
@@ -149,9 +155,9 @@ const Index = (props) => {
   });
   const [itemsList, setItemsList] = useState([
     {
-      imgUrl: require("../../assets/images/cardImage.png"),
+      imgUrl: require("../../assets/images/blunt.png"),
       title: "Woman Blunt Cut",
-      price: "$50",
+      price: "50",
       createdAt: "2024-08-10T13:13:36.818+00:00",
       description:
         "Layered hair is a hairstyle that gives the illusion of Layered hair is a hairstyle that gives the illusion of",
@@ -159,9 +165,9 @@ const Index = (props) => {
       isActive: false,
     },
     {
-      imgUrl: require("../../assets/images/cardImage.png"),
+      imgUrl: require("../../assets/images/blunt.png"),
       title: "Woman Blunt Cut",
-      price: "$50",
+      price: "50",
       createdAt: "2024-08-10T13:13:36.818+00:00",
       description:
         "Layered hair is a hairstyle that gives the illusion of Layered hair is a hairstyle that gives the illusion of",
@@ -171,7 +177,7 @@ const Index = (props) => {
     {
       imgUrl: require("../../assets/images/cardImage.png"),
       title: "Woman Blunt Cut",
-      price: "$50",
+      price: "50",
       createdAt: "2024-08-10T13:13:36.818+00:00",
       description:
         "Layered hair is a hairstyle that gives the illusion of Layered hair is a hairstyle that gives the illusion of",
@@ -259,7 +265,7 @@ const Index = (props) => {
         <ItemCard
           imgUrl={updatedItemsList[idx].imgUrl}
           title={updatedItemsList[idx].title}
-          price={updatedItemsList[idx].price}
+          price={"$" + updatedItemsList[idx].price}
           createdAt={updatedItemsList[idx].createdAt}
           description={
             viewPointWidth > 1028
@@ -271,8 +277,9 @@ const Index = (props) => {
           tagName={updatedItemsList[idx].tagName}
           isActive={updatedItemsList[idx].isActive}
           onClick={() => {
-            updatedItemsList[idx].isActive = !updatedItemsList[idx].isActive;
-            setItemsList(updatedItemsList);
+            dispatch(openServicesDetailsModal(updatedItemsList[idx]));
+            // updatedItemsList[idx].isActive = !updatedItemsList[idx].isActive;
+            // setItemsList(updatedItemsList);
           }}
         />
       );
@@ -281,7 +288,7 @@ const Index = (props) => {
   };
 
   return (
-    <div className=" relative h-auto mb-8 px-5">
+    <div className={` relative h-auto mb-8 px-5 ${props.className}`}>
       <header className={" mx-[-14px]"}>
         <PageNavigation
           title={"Services"}
@@ -290,79 +297,87 @@ const Index = (props) => {
           }}
         />
       </header>
-      <div className="flex flex-row justify-between items-center mt-4">
-        <FormHeader
-          title={"Hello, Delreen"}
-          subTitle={"Find the service you want, and treat yourself"}
-        />
-        <div className="flex">
-          <Button size="md" variant={"iconButton"}>
-            {GetIconByName("search")}
-          </Button>
-        </div>
-      </div>
-      {/* search bar */}
-      <div className="mt-7">
-        <Input
-          placeholder={"Search service.."}
-          className={"relative"}
-          required={true}
-          type="text"
-          phoneNo={false}
-          leftIcon={"search"}
-          variant="normal"
-          value={searchItem}
-          onChange={(e) => {
-            setSearchItem(e.target.value);
-          }}
-        />
-      </div>
-      {/* recent */}
-      <section>
-        <div className="flex flex-row justify-between items-center mt-4 mb-5">
-          <div className="text-grey-80 text-16px font-nunito font-normal">
-            Recents
-          </div>
-          <div className="text-brand text-16px font-manrope font-semibold cursor-pointer hover:underline">
-            Clear all
+      <Scrollbars
+        onScroll={handleOnScroll}
+        renderView={(props) => (
+          <div {...props} style={{ ...props.style, overflowX: "hidden" }} />
+        )}
+        style={{ height: viewPointHeight - 130 }}
+      >
+        <div className="flex flex-row justify-between items-center mt-4">
+          <FormHeader
+            title={"Hello, Delreen"}
+            subTitle={"Find the service you want, and treat yourself"}
+          />
+          <div className="flex">
+            <Button size="md" variant={"iconButton"}>
+              {GetIconByName("search")}
+            </Button>
           </div>
         </div>
-        <div className="flex flex-col">
-          <RecentCard itemName={"Hair service"} />
-          <RecentCard itemName={"Nail"} />
-          <RecentCard itemName={"Wax"} />
+        {/* search bar */}
+        <div className="mt-7">
+          <Input
+            placeholder={"Search service.."}
+            className={"relative"}
+            required={true}
+            type="text"
+            phoneNo={false}
+            leftIcon={"search"}
+            variant="normal"
+            value={searchItem}
+            onChange={(e) => {
+              setSearchItem(e.target.value);
+            }}
+          />
         </div>
-      </section>
-      {/* menus */}
-      <section>
-        <div className="flex flex-row justify-between items-center mt-5">
-          <div className="text-brand text-16px font-manrope font-bold">
-            What do you want to do?
+        {/* recent */}
+        <section>
+          <div className="flex flex-row justify-between items-center mt-4 mb-5">
+            <div className="text-grey-80 text-16px font-nunito font-normal">
+              Recents
+            </div>
+            <div className="text-brand text-16px font-manrope font-semibold cursor-pointer hover:underline">
+              Clear all
+            </div>
           </div>
-          <div className="text-brand text-16px font-manrope font-semibold cursor-pointer hover:underline">
-            View all
+          <div className="flex flex-col">
+            <RecentCard itemName={"Hair service"} />
+            <RecentCard itemName={"Nail"} />
+            <RecentCard itemName={"Wax"} />
           </div>
-        </div>
-        <div className="sm:hidden md:hidden lg:block max-md:hidden max-lg:block mt-4">
-          <div className=" flex flex-row flex-wrap gap-4 justify-between">
-            {renderMenus()}
+        </section>
+        {/* menus */}
+        <section>
+          <div className="flex flex-row justify-between items-center mt-5">
+            <div className="text-brand text-16px font-manrope font-bold">
+              What do you want to do?
+            </div>
+            <div className="text-brand text-16px font-manrope font-semibold cursor-pointer hover:underline">
+              View all
+            </div>
           </div>
-        </div>
-        <div className="sm:block md:block lg:hidden max-md:block max-lg:hidden mt-4">
-          <div className="flex flex-row flex-wrap gap-4 justify-between">
-            {renderMenusMobileTop()}
+          <div className="sm:hidden md:hidden lg:block max-md:hidden max-lg:block mt-4">
+            <div className=" flex flex-row flex-wrap gap-4 justify-between">
+              {renderMenus()}
+            </div>
           </div>
-          <div className="flex flex-row flex-wrap gap-4 justify-between mt-4">
-            {renderMenusMobileBottom()}
+          <div className="sm:block md:block lg:hidden max-md:block max-lg:hidden mt-4">
+            <div className="flex flex-row flex-wrap gap-4 justify-between">
+              {renderMenusMobileTop()}
+            </div>
+            <div className="flex flex-row flex-wrap gap-4 justify-between mt-4">
+              {renderMenusMobileBottom()}
+            </div>
           </div>
-        </div>
-      </section>
-      {/* active cards */}
-      <section>
-        <div className="flex flex-row flex-wrap justify-between mt-4 gap-4">
-          {renderItemsList()}
-        </div>
-      </section>
+        </section>
+        {/* active cards */}
+        <section>
+          <div className="flex flex-row flex-wrap justify-between mt-4 gap-4">
+            {renderItemsList()}
+          </div>
+        </section>
+      </Scrollbars>
     </div>
   );
 };

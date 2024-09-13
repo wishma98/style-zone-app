@@ -86,7 +86,7 @@ const Index = (props) => {
                     ? "sm"
                     : "md"
                 }
-                onClick={props.type === "" && props.onClick}
+                onClick={props.onClick}
               >
                 {GetIconByName(
                   props.isActive

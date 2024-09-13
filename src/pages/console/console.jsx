@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import NavigationBar from "./navigationBar";
 import { Booking, Dashboard, Notifications, Profile, Services } from "..";
 import Scrollbars from "react-custom-scrollbars-2";
-import { NotificationModal } from "../modals";
+import { NotificationModal, ServiceDetailModal } from "../modals";
 import { useSelector } from "react-redux";
 
 const Index = (props) => {
@@ -12,6 +12,9 @@ const Index = (props) => {
 
   const { isOpenNotificationModal } = useSelector(
     ({ notificationsReducer }) => notificationsReducer
+  );
+  const { isOpenServicesDetailsModal } = useSelector(
+    ({ serviceDetailsReducer }) => serviceDetailsReducer
   );
 
   useEffect(() => {
@@ -47,6 +50,7 @@ const Index = (props) => {
   return (
     <div className={"bg-white h-full flex flex-col justify-between"}>
       {isOpenNotificationModal && <NotificationModal />}
+      {isOpenServicesDetailsModal && <ServiceDetailModal />}
       <Scrollbars
         onScroll={handleOnScroll}
         renderView={(props) => (
@@ -55,9 +59,17 @@ const Index = (props) => {
         style={{ height: viewPointHeight }}
       >
         {props.location.pathname === "/" && <Dashboard />}
-        {props.location.pathname === "/services" && <Services />}
+        {props.location.pathname === "/services" && (
+          <Services
+            className={isOpenServicesDetailsModal ? "blur-[2px]" : ""}
+          />
+        )}
         {props.location.pathname === "/booking" && <Booking />}
-        {props.location.pathname === "/notifications" && <Notifications />}
+        {props.location.pathname === "/notifications" && (
+          <Notifications
+            className={isOpenNotificationModal ? "blur-[2px]" : ""}
+          />
+        )}
         {props.location.pathname === "/profile" && <Profile />}
       </Scrollbars>
       <footer className="w-full fixed bottom-0 z-50">

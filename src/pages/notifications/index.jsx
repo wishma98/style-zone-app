@@ -8,7 +8,7 @@ const Index = (props) => {
   const [menuName, setMenuName] = useState("message");
 
   return (
-    <div className=" relative h-full p-4">
+    <div className={`relative h-full p-4 ${props.className}`}>
       <header className={"grid grid-cols-2"}>
         <NavigationComponent
           menuName={"Messages"}

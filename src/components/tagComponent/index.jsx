@@ -30,18 +30,16 @@ const Index = (props) => {
             ? " transition ease-in-out duration-300 cursor-pointer hover:bg-brand hover:text-white " +
               rootClassName
             : " cursor-auto " + rootClassName
-        }`
+        } flex flex-row items-center gap-2`
       }
       onClick={props.onClick}
     >
-      <div className={`flex flex-row items-center gap-2`}>
-        {props.iconName && (
-          <div className={`text-12px text-brand-secondary`}>
-            {GetIconByName(props.iconName)}
-          </div>
-        )}
-        <>{props.tagName}</>
-      </div>
+      {props.iconName && (
+        <div className={`text-12px text-brand-secondary`}>
+          {GetIconByName(props.iconName)}
+        </div>
+      )}
+      <>{props.tagName}</>
     </div>
   );
 };

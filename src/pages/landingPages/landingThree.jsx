@@ -21,12 +21,12 @@ const LandingThree = (props) => {
           partners.
         </div>
         <div className="grid grid-flow-col gap-2 mt-11">
-          <div className={`h-2 w-2 bg-white rounded-full dot`} />
-          <div className={`h-2 w-2 bg-white rounded-full dot`} />
+          <div className={`h-2 w-2 bg-white rounded-full ls_dot`} />
+          <div className={`h-2 w-2 bg-white rounded-full ls_dot`} />
           <div
             className={`h-2 ${
               props.isActive
-                ? "bg-brand-secondary-100 w-[30px] rounded-md slider"
+                ? "bg-brand-secondary-100 w-[30px] rounded-md landing-slider"
                 : "w-2 bg-white rounded-full"
             }`}
           />

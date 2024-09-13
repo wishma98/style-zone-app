@@ -47,6 +47,7 @@ const Messages = () => {
     let clientHeight =
       document.documentElement.clientHeight || window.innerHeight;
   };
+
   // Set up event listeners for resize and scroll, and socket events
   useEffect(() => {
     // Listen for socket events

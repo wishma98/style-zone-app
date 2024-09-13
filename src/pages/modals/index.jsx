@@ -1,3 +1,4 @@
 import NotificationModal from "./NotificationModal";
+import ServiceDetailModal from "./ServiceDetailModal";
 
-export { NotificationModal };
+export { NotificationModal, ServiceDetailModal };
